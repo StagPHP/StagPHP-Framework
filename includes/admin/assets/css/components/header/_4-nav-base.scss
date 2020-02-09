@@ -1,0 +1,24 @@
+.navigation {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: -270px;
+  width: 270px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  z-index: 9;
+}
+
+.navigation.menu-open {
+  -webkit-transform: translateX(270px);
+      -ms-transform: translateX(270px);
+          transform: translateX(270px);
+}

@@ -1,0 +1,82 @@
+label {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.form-check label {
+  margin: 0 !important;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid;
+  border-radius: .25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out
+}
+
+.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1
+}
+
+.form-group {
+  margin-bottom: 1rem
+}
+
+.form-text {
+  display: block;
+  margin-top: .25rem
+}
+
+
+form{
+  .form-group.checkbox {
+    margin: 24px 0;
+
+    p {
+      display: block;
+      position: relative;
+      height: auto;
+      overflow: auto;
+      line-height: 20px;
+      margin: 0;
+      
+      input {
+        float: left;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        margin: 0;
+        margin-right: 10px;
+      }
+
+      span {
+        float: left;
+        line-height: 20px;
+      }
+    }
+  }
+
+  a.link-below-input {
+    display: block;
+    text-align: right;
+    line-height: 28px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,71 @@
+.install-form-base{
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2%;
+
+  >div{
+    border-radius: 4px;
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2), -1px 2px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2), -1px 2px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  .cyz-fb-head{
+    padding: 80px 10px 70px;
+    background-color: #f9f9f9;
+
+    >div{
+      max-width: 620px;
+      padding: 0 10px;
+      margin: 0 auto;
+    }
+  }
+
+  .cyz-fb-title{
+    .title-block{
+      padding: 10px;
+    }
+    p{
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .cyz-fb-body{
+    padding: 60px 0;
+    border-top: 1px solid #e7e7e7;
+    background-color: #f2f2f2;
+
+    p{
+      text-align: justify;
+      margin: 10px auto;
+
+      >.btn{
+        margin: 30px 0 0;
+      }
+    }
+
+    .cyz-fb-sep{
+      margin: 60px 0;
+    }
+
+    >div{
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form{
+      margin: 20px 0;
+
+      label{
+        font-weight: 700;
+      }
+    }
+  }
+
+  .cyz-fb-footer{
+    background-color: #E7E7E7;
+    border-top: 1px solid #d7d7d7;
+  }
+}

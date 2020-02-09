@@ -1,0 +1,38 @@
+table.data-table {
+  width: 100%;
+  border: 0;
+
+  thead {
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 0 0 1px #e1e1e1, 0 2px 0 1px #e1e1e1;
+
+    td {
+      padding: 16px 10px;
+      font-weight: bold;
+      font-size: 120%;
+      color: #666;
+    }
+  }
+
+  tbody {
+    box-shadow: 0 0 0 1px #e1e1e1;
+    border-radius: 0 0 4px 4px;
+
+    tr:nth-of-type(even) {
+      background-color: #f4f4f4;
+    }
+
+    td {
+      padding: 14px 10px;
+    }
+  }
+}
+
+table.data-table.no-border {
+  thead {
+    box-shadow:  0 3px 0 0 #e1e1e1;
+  }
+  tbody {
+    box-shadow: none;
+  }
+}

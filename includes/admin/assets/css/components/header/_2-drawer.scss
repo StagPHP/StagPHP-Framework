@@ -1,0 +1,78 @@
+.drawer {
+  position: relative;
+  float: left;
+  width: 60px;
+  height: 60px;
+  background: rgba(0,0,0,0);
+  background: -moz-linear-gradient(135deg, rgba(0,0,0,0) 67%, rgba(0,0,0,0.18) 67%);
+  background: -webkit-linear-gradient(135deg, rgba(0,0,0,0) 67%, rgba(0,0,0,0.18) 67%);
+  background: linear-gradient(135deg, rgba(0,0,0,0) 67%, rgba(0,0,0,0.18) 67%);
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 24px;
+    border-radius: 3px;
+    opacity: 1;
+    left: 18px;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+
+  span:nth-child(1) {
+    top: 22px;
+  }
+
+  span:nth-child(2),
+  span:nth-child(3) {
+    top: 29px;
+  }
+
+  span:nth-child(4) {
+    top: 36px;
+  }
+}
+
+.drawer.menu-open {
+
+  span:nth-child(1) {
+    top: 23px;
+    width: 0%;
+    opacity: 0;
+    left: 50%;
+  }
+
+  span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+  }
+
+  span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+  }
+
+  span:nth-child(4) {
+    top: 23px;
+    width: 0%;
+    opacity: 0;
+    left: 50%;
+  }
+}
