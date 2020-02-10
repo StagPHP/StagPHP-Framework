@@ -52,7 +52,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
             <div class="table-list-box p-3">
               <table class="select-deployment px-2 mt-5 mb-3" data-deploy="manual-upload-deployment">
                 <tr>
-                  <td class="p-2"><span class="cyz-ico cyz-ico-cloud-upload"></span></td>
+                  <td class="p-2"><span class="stag-ico stag-ico-cloud-upload"></span></td>
                   <td class="p-2">
                     <h3>Upload Application Package</h3>
                   </td>
@@ -63,7 +63,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
 
               <table class="select-deployment px-2 mt-3 mb-5" data-deploy="github-deployment">
                 <tr>
-                  <td class="p-2"><span class="cyz-ico cyz-ico-github"></span></td>
+                  <td class="p-2"><span class="stag-ico stag-ico-github"></span></td>
                   <td class="p-2">
                     <h3>Enter the Application Repository URL</h3>
                   </td>
@@ -81,7 +81,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
                 <table>
                 <tr>
                   <td>
-                    <span class="cyz-ico cyz-ico-error"></span>
+                    <span class="stag-ico stag-ico-error"></span>
                   </td>
                   <td class="px-2">
                     <h3 class="my-2">Error! Please Try Again.</h3>
@@ -105,7 +105,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
                 <!-- Title -->
                 <div class="icon-header-title text-center my-4 upload_package_title">
                   <div>
-                    <span class="cyz-ico cyz-ico-cloud-upload"></span>
+                    <span class="stag-ico stag-ico-cloud-upload"></span>
                     <h3>Upload Application Package</h3>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
                           data-toggle="tooltip" data-trigger="hover" data-placement="top" data-title="Upload File">
                       </div>
                       <small class="form-text text-muted text-center">
-                        <span id="file-hint-text"><span class="cyz-ico cyz-ico-zip"></span> Select Application Package
+                        <span id="file-hint-text"><span class="stag-ico stag-ico-zip"></span> Select Application Package
                           Zip File</span>
                       </small>
                     </div>
@@ -139,7 +139,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
                   <table>
                   <tr>
                     <td>
-                      <span class="cyz-ico cyz-ico-error"></span>
+                      <span class="stag-ico stag-ico-error"></span>
                     </td>
                     <td class="px-2">
                       <h3 class="my-2">Success!</h3>
@@ -181,7 +181,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
                 <!-- Title -->
                 <div class="icon-header-title text-center my-4">
                   <div>
-                    <span class="cyz-ico cyz-ico-github"></span>
+                    <span class="stag-ico stag-ico-github"></span>
                     <h3>Enter the Application Repository URL</h3>
                   </div>
                   

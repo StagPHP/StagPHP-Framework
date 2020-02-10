@@ -17,10 +17,10 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
         <h1 class="page-header p-3">
           <span><?php echo $view_name_formatted; ?></span>
           <span class="cta disabled bg-primary text-white">
-            <i class="cyz-ico cyz-ico-add"></i>Add New
+            <i class="stag-ico stag-ico-add"></i>Add New
           </span>
           <span id="refresh-view" class="refresh">
-            <i class="cyz-ico cyz-ico-refresh bg-primary text-white"></i>
+            <i class="stag-ico stag-ico-refresh bg-primary text-white"></i>
           </span>
         </h1>
       </div>

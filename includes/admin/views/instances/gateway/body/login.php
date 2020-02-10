@@ -19,7 +19,7 @@ global $form_error; ?>
             <?php foreach($form_error as $error): ?>
               <div class="title-block bg-danger">
                 <p class="text-white">
-                  <span class="cyz-ico cyz-ico-error"></span>
+                  <span class="stag-ico stag-ico-error"></span>
                   <span><strong>ERROR:</strong> <?php echo $error; ?></span>
                 </p>
               </div>
@@ -27,7 +27,7 @@ global $form_error; ?>
             <?php else: ?>
               <div class="title-block bg-secondary">
                 <p class="text-white">
-                  <span class="cyz-ico cyz-ico-person"></span>
+                  <span class="stag-ico stag-ico-person"></span>
                   <span>Super User Login</span>
                 </p>
               </div>

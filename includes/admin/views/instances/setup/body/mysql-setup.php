@@ -20,7 +20,7 @@ $form_action = 'db_setup'; ?>
             <div class="cyz-fb-title">
               <div class="title-block bg-secondary">
                 <p class="text-white">
-                  <span class="cyz-ico cyz-ico-database"></span>
+                  <span class="stag-ico stag-ico-database"></span>
                   <span>Establish Database Connection</span>
                 </p>
               </div>

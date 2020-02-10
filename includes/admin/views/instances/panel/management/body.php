@@ -20,7 +20,7 @@ $response = stag_is_update_available(); ?>
           <div class="row align-items-center px-3">
             <div class="col-lg-2 col-sm-12">
               <div class="update-icons">
-                <span class="cyz-ico cyz-ico-error-solid"></span>
+                <span class="stag-ico stag-ico-error-solid"></span>
               </div>
             </div>
             <div class="col-lg-10 col-sm-12">
@@ -34,7 +34,7 @@ $response = stag_is_update_available(); ?>
           <div class="row align-items-center px-3">
             <div class="col-lg-2 col-sm-12">
               <div class="update-icons">
-                <span class="cyz-ico cyz-ico-check-circle-solid"></span>
+                <span class="stag-ico stag-ico-check-circle-solid"></span>
               </div>
             </div>
             <div class="col-lg-10 col-sm-12">

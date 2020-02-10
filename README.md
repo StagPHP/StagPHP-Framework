@@ -1,15 +1,15 @@
+
 # StagPHP - MVC Driven PHP Framework.
-StagPHP is a minimalistic build open source PHP Framework for all types of modern application. It follows the MVC (Model View Controller) architecture.
+StagPHP is is Open Source, Lightweight, Extensible, High Performance, and Secure PHP Framework for Modern Web Applications. It follows the MVC (Model View Controller) architecture.
 
 ## Preamble
-StagPHP is create all types of websites to super powerful web applications. It has minimal inbuilt functionality. Every functionality is carefully selected to just provide a bare bone-structure for your project. Thus it is minimalistic. Minimalistic framework structure low server resource and provide better performance to end-user.
-StagPHP needs no extra juice! It is compatible with almost all web server as it requires Apache and PHP to run. Optionally mySQL (or any other database). It is lightweight, so any LAMP server can run StagPHP.
-StagPHP functionality can be extended by using StagONS. It is just like addons/plugins AKA (also known as) external controllers. You can install official, self-created or 3rd party StagONS for your project. It makes your application modular. It is full featured framework and supports export, import, editing and update functionality directly from SU (Super User) Panel.
-StagPHP is secured by default. But you can follow the steps listed below for better security
-- Enable Automatic Updates
-- Use VPS (Virtual Private Server) for hosting
-- Use strong password for SU Account
-- Do Not Install 3rd Party (UnTrusted) StagONS
+StagPHP is Open Source, Lightweight, Extensible, High Performance, and Secure PHP Framework for Modern Web Applications. It is compatible with almost all web server that can run PHP, my SQL and Apache. It follows the popular MVC (Model View Controller) Architecture.
+1. **Open Source**
+StagPHP is an open-source framework. All of its verified StagONS are free and open source. We believe in open-source projects, as the contribution of every single individual matter to us. Join our community and be a part of StagPHP development team.
+2. **StagONS**
+StagPHP comes built-in with few libraries to ease your work. But, we all know, that might not be just enough. So we have StagONS. It is just like external library packages, similar to plugins. StagONS extends the functionality of StagPHP framework.
+3. **Easy to use**
+StagPHP is very easy to learn and use for your project. Use built-in libraries and StagONS for smart development. Check out our guide to get started with StagPHP. For PHP experts, we have detailed documentation of core structure and functionalities, and each and every built-in core libraries of StagPHP.
 
 ## Directory Structure
 
@@ -22,7 +22,7 @@ StagPHP has following directory structure (Updated on V 1.0.2). We are creating 
 		- assets
 		- controllers
 		- views
-	- componets
+	- components
 		- boot - Boot Up and Shutdown Function
 		- core
 		- helpers
@@ -54,7 +54,22 @@ Must be considered while developing StagPHP application, to avoid conflicts.
 
 ## Update Log
 
-### V 1.0.1 - Beta Build (10-01-2020)
+### V 1.0.3 - Beta Build (10-01-2020)
+1. Several minor bugs fixed
+2. Backed enqueue logic created
+4. Update logic optimized
+5. Core code optimized
+
+### V 1.0.2
+1. Prefix stag- removed from core folders
+2. Object buffer optimized
+3. View List Bug Fixed
+4. View Edit Page Bug Fixed
+5. Application Re-Structure
+6. Cache separated into container and cache
+7. Core Update Logic Created
+
+### V 1.0.1
 1. Complete code auditing, arrangement and cleanup
 2. Installation modified
 3. DB controller updated

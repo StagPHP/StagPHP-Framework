@@ -28,7 +28,7 @@ else{
               <?php foreach((array)$errors as $error): ?>
                 <div class="title-block bg-danger">
                   <p class="text-white">
-                    <span class="cyz-ico cyz-ico-error"></span>
+                    <span class="stag-ico stag-ico-error"></span>
                     <span><strong>ERROR:</strong> <?php echo $error; ?></span>
                   </p>
                 </div>

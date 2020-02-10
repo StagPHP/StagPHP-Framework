@@ -42,11 +42,17 @@ stag_attach_controller('/core/integration/routing.php', 'components');
 /** Integrate Application With StagPHP */
 stag_attach_controller('/core/integration/app/main.php', 'components');
 
+/** Integrate Application With StagPHP */
+stag_attach_controller('/core/templating-engine/functions.php', 'components');
+
 /** Integrate Navigation With StagPHP */
 stag_attach_controller('/render-ui/navigation.php', 'admin');
 
-/** Integrate view with admin panel */
-integrate_view();
+/** Integrate Navigation With StagPHP */
+stag_attach_controller('/panel/enqueue.php', 'admin');
 
 /** Get Admin Routing */
 stag_attach_controller('/routing/main.php', 'admin');
+
+/** Integrate view with admin panel */
+integrate_view();

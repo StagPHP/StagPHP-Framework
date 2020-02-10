@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'stagPHP';
+  src:  url('fonts/stagPHP.eot?m09buw');
+  src:  url('fonts/stagPHP.eot?m09buw#iefix') format('embedded-opentype'),
+    url('fonts/stagPHP.ttf?m09buw') format('truetype'),
+    url('fonts/stagPHP.woff?m09buw') format('woff'),
+    url('fonts/stagPHP.svg?m09buw#stagPHP') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.stag-ico {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'stagPHP' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.stag-ico-logout:before {
+  content: "\e90f";
+}
+.stag-ico-check:before {
+  content: "\e876";
+}
+.stag-ico-alert:before {
+  content: "\e645";
+}
+.stag-ico-refresh:before {
+  content: "\e5d5";
+}
+.stag-ico-error-solid:before {
+  content: "\e000";
+}
+.stag-ico-error:before {
+  content: "\e001";
+}
+.stag-ico-warning:before {
+  content: "\e002";
+}
+.stag-ico-audio-video:before {
+  content: "\e04a";
+}
+.stag-ico-web:before {
+  content: "\e051";
+}
+.stag-ico-post:before {
+  content: "\e060";
+}
+.stag-ico-add-box:before {
+  content: "\e146";
+}
+.stag-ico-copy:before {
+  content: "\e14d";
+}
+.stag-ico-page:before {
+  content: "\e14e";
+}
+.stag-ico-report:before {
+  content: "\e160";
+}
+.stag-ico-app-box:before {
+  content: "\e167";
+}
+.stag-ico-file:before {
+  content: "\e24d";
+}
+.stag-ico-cloud-download:before {
+  content: "\e2c0";
+}
+.stag-ico-cloud-upload:before {
+  content: "\e2c4";
+}
+.stag-ico-file-upload:before {
+  content: "\e2c6";
+}
+.stag-ico-down-arrow:before {
+  content: "\e313";
+}
+.stag-ico-left-arrow:before {
+  content: "\e314";
+}
+.stag-ico-up-arrow:before {
+  content: "\e316";
+}
+.stag-ico-controller:before {
+  content: "\e322";
+}
+.stag-ico-security:before {
+  content: "\e32a";
+}
+.stag-ico-menu:before {
+  content: "\e3c7";
+}
+.stag-ico-right-arrow:before {
+  content: "\e409";
+}
+.stag-ico-documents:before {
+  content: "\e415";
+}
+.stag-ico-tune:before {
+  content: "\e429";
+}
+.stag-ico-layers:before {
+  content: "\e53b";
+}
+.stag-ico-product:before {
+  content: "\e54c";
+}
+.stag-ico-arrow-back:before {
+  content: "\e5c4";
+}
+.stag-ico-arrow-forward:before {
+  content: "\e5c8";
+}
+.stag-ico-close-solid:before {
+  content: "\e5c9";
+}
+.stag-ico-close:before {
+  content: "\e5cd";
+}
+.stag-ico-more-vert:before {
+  content: "\e5d4";
+}
+.stag-ico-arrow-upward:before {
+  content: "\e5d8";
+}
+.stag-ico-arrow-downward:before {
+  content: "\e5db";
+}
+.stag-ico-notifications:before {
+  content: "\e7f4";
+}
+.stag-ico-notifications-active:before {
+  content: "\e7f7";
+}
+.stag-ico-person:before {
+  content: "\e7fd";
+}
+.stag-ico-box-solid:before {
+  content: "\e834";
+}
+.stag-ico-check-box-solid:before {
+  content: "\e835";
+}
+.stag-ico-account-box:before {
+  content: "\e851";
+}
+.stag-ico-tools:before {
+  content: "\e869";
+}
+.stag-ico-check-circle-solid:before {
+  content: "\e86c";
+}
+.stag-ico-dashboard:before {
+  content: "\e871";
+}
+.stag-ico-help:before {
+  content: "\e887";
+}
+.stag-ico-new-window:before {
+  content: "\e89e";
+}
+.stag-ico-images:before {
+  content: "\e8a7";
+}
+.stag-ico-search:before {
+  content: "\e8b6";
+}
+.stag-ico-settings:before {
+  content: "\e8b8";
+}
+.stag-ico-cart:before {
+  content: "\e8cc";
+}
+.stag-ico-verified-user:before {
+  content: "\e8e8";
+}
+.stag-ico-list:before {
+  content: "\e8ef";
+}
+.stag-ico-visibility:before {
+  content: "\e8f4";
+}
+.stag-ico-visibility-off:before {
+  content: "\e8f5";
+}
+.stag-ico-help-outline:before {
+  content: "\e8fd";
+}
+.stag-ico-zip:before {
+  content: "\e900";
+}
+.stag-ico-application:before {
+  content: "\e901";
+}
+.stag-ico-frame:before {
+  content: "\e902";
+}
+.stag-ico-code:before {
+  content: "\e903";
+}
+.stag-ico-check-circle:before {
+  content: "\e904";
+}
+.stag-ico-circle:before {
+  content: "\e905";
+}
+.stag-ico-open-app:before {
+  content: "\e906";
+}
+.stag-ico-rocket:before {
+  content: "\e907";
+}
+.stag-ico-hammer:before {
+  content: "\e908";
+}
+.stag-ico-add:before {
+  content: "\e909";
+}
+.stag-ico-database:before {
+  content: "\e90a";
+}
+.stag-ico-remove-box-solid:before {
+  content: "\e90b";
+}
+.stag-ico-github:before {
+  content: "\e90c";
+}
+.stag-ico-management:before {
+  content: "\e90d";
+}
+.stag-ico-resize:before {
+  content: "\e90e";
+}

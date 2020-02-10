@@ -5,12 +5,12 @@
 
     <p class="menu">
       <a href="<?php echo get_home_url(); ?>" target="_blank">
-        <span class="cyz-ico cyz-ico-new-window"></span> App Frontend
+        <span class="stag-ico stag-ico-new-window"></span> App Frontend
       </a>
     </p>
     <p class="menu">
       <a href="<?php echo get_home_url().'/su-panel/'; ?>">
-        <span class="cyz-ico cyz-ico-dashboard"></span> Dashboard
+        <span class="stag-ico stag-ico-dashboard"></span> Dashboard
       </a>
     </p>
 
@@ -18,14 +18,14 @@
 
     <p class="menu">
       <a href="<?php echo get_home_url().'/su-panel/app-model/'; ?>">
-        <span class="cyz-ico cyz-ico-database"></span> APP Model
+        <span class="stag-ico stag-ico-database"></span> APP Model
       </a>
     </p>
 
     <p class="menu drop-down" data-submenu-id="app-view">
       <a href="#">
-        <span class="cyz-ico cyz-ico-visibility"></span> APP Views
-        <span class="cyz-ico cyz-ico-add dropdown-icon expand"></span>
+        <span class="stag-ico stag-ico-visibility"></span> APP Views
+        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-app-view">
@@ -34,7 +34,7 @@
 
     <p class="menu">
       <a href="#">
-        <span class="cyz-ico cyz-ico-controller"></span> APP Controllers
+        <span class="stag-ico stag-ico-controller"></span> APP Controllers
       </a>
     </p>
 
@@ -42,7 +42,7 @@
 
     <p class="menu">
       <a href="#">
-        <span class="cyz-ico cyz-ico-controller"></span> Addons
+        <span class="stag-ico stag-ico-controller"></span> Addons
       </a>
     </p>
 
@@ -50,8 +50,8 @@
 
     <p class="menu drop-down" data-submenu-id="management">
       <a href="#">
-        <span class="cyz-ico cyz-ico-management"></span> Management
-        <span class="cyz-ico cyz-ico-add dropdown-icon expand"></span>
+        <span class="stag-ico stag-ico-management"></span> Management
+        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-management">
@@ -62,8 +62,8 @@
 
     <p class="menu drop-down" data-submenu-id="settings">
       <a href="#">
-        <span class="cyz-ico cyz-ico-tune"></span> Settings
-        <span class="cyz-ico cyz-ico-add dropdown-icon expand"></span>
+        <span class="stag-ico stag-ico-tune"></span> Settings
+        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-settings">
@@ -74,8 +74,8 @@
 
     <p class="menu drop-down" data-submenu-id="tools">
       <a href="#">
-        <span class="cyz-ico cyz-ico-tools"></span> Tools
-        <span class="cyz-ico cyz-ico-add dropdown-icon expand"></span>
+        <span class="stag-ico stag-ico-tools"></span> Tools
+        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-tools">
@@ -87,7 +87,7 @@
 
     <p class="menu">
       <a href="#">
-        <span class="cyz-ico cyz-ico-logout"></span> Logout
+        <span class="stag-ico stag-ico-logout"></span> Logout
       </a>
     </p>
 

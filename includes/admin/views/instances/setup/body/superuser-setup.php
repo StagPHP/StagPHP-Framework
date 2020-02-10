@@ -20,7 +20,7 @@ $form_action = 'su_setup'; ?>
             <div class="cyz-fb-title">
               <div class="title-block bg-secondary">
                 <p class="text-white">
-                  <span class="cyz-ico cyz-ico-person"></span>
+                  <span class="stag-ico stag-ico-person"></span>
                   <span>Create Superuser</span>
                 </p>
               </div>
