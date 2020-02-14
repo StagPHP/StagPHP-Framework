@@ -29,18 +29,18 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
       <span class="bg-white">SUPER ADMIN PANEL</span>
     </div>
     <div class="dropdown">
-      <a href="<?php echo get_home_url().'/' ?>" target="_blank"><span class="stag-ico stag-ico-new-window mr-2"></span> App Frontend</a>
-      <a href="<?php echo get_home_url().'/su-panel/logout/' ?>"><span class="stag-ico stag-ico-logout mr-2"></span> Logout</a>
+      <a href="<?php echo get_home_url().'/' ?>" target="_blank"><span class="stag-icon stag-icon-new-window mr-2"></span> App Frontend</a>
+      <a href="<?php echo get_home_url().'/su-panel/logout/' ?>"><span class="stag-icon stag-icon-logout mr-2"></span> Logout</a>
     </div>
   </div>
 
   <!-- Header Block -->
   <div class="right-cta-icon dropdown-block">
-    <span class="stag-ico notification stag-ico-notifications text-white"></span>
+    <span class="stag-icon notification stag-icon-notifications text-white"></span>
     <div class="dropdown notification-list">
       <table id="notification-list">
         <tr class="no-notify">
-          <td><span class="stag-ico stag-ico-check"></span></td>
+          <td><span class="stag-icon stag-icon-check"></span></td>
           <td><a>All good! There is nothing to notify.</a></td>
         </tr>
       </table>

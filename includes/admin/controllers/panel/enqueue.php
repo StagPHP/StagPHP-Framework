@@ -5,7 +5,7 @@
 // ========================================
 enqueue_css_backend(array(
     'name'          => 'bootstrap',
-    'relative_url'  => '/vendor/bootstrap/scss/bootstrap.min.css',
+    'relative_url'  => '/vendor/bootstrap/css/bootstrap.min.css',
     'version'       => 'v4.3.1',
 ));
 enqueue_css_backend(array(

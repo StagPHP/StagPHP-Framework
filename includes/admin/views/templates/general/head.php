@@ -7,7 +7,7 @@
 /** CYZ VR: View Resources */
 $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
 
-<!DOCTYPE HTML SYSTEM>
+<!DOCTYPE HTML>
 <html>
 
 <head>

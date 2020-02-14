@@ -1,6 +1,9 @@
 <?php
 
-function stag_initialize_core_update(){
+function stag_initialize_core_update($type){
+    if('lite' == $type) $file_name = 'update-daemon-lite.php';
+    else $file_name = 'update-daemon.php';
+
     // Start Session
     if(session_status() == PHP_SESSION_NONE) session_start();
 
@@ -10,7 +13,7 @@ function stag_initialize_core_update(){
     /** Copy config file */
     $file_copied = $file_worker->copy_file(array(
         'directory'             => '/includes/components/core/update-management/core/init.php',
-        'file_name'             => 'update.daemon.php',
+        'file_name'             => $file_name,
         'destination_directory' =>'/',
         'create_directories'    => TRUE,
         'new_file_name'         => 'update.php',

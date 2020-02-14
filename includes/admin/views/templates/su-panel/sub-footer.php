@@ -13,6 +13,5 @@
 
 <!-- JS Variables -->
 <script>
-  var manage_update_rep = "<?php echo get_admin_panel_url().'/manage-update-rep/'; ?>";
-  var core_update = "<?php echo get_admin_panel_url().'/core-update/'; ?>";
+  var stag_api_ep_core_update = "<?php echo get_admin_panel_url().'/api/internal/core-update/'; ?>";
 </script>

@@ -16,9 +16,9 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
       <div class="mb-6">
         <h1 class="page-header px-3 pt-3 pb-0">
           <span class="cta first bg-primary text-white" data-link="<?php echo $_GET['view']; ?>">
-            <i class="stag-ico stag-ico-arrow-back bg-primary dark-1"></i>Return
+            <i class="stag-icon stag-icon-arrow-back bg-primary dark-1"></i>Return
           </span>
-          <!-- <span id="back-view" class="back"><i class="stag-ico stag-ico-arrow-back"></i></span> -->
+          <!-- <span id="back-view" class="back"><i class="stag-icon stag-icon-arrow-back"></i></span> -->
           <span>Editor</span>
         </h1>
         <h2 class="px-3 pt-0 pb-3"></h2>

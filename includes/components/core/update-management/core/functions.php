@@ -84,3 +84,89 @@ function stag_is_update_available(){
         $version
     );
 }
+
+function stag_check_update_requirements(){
+    /** File Operator Object */
+    $file_worker = new stag_file_manager('/');
+
+    /** Includes Folder */
+    $response = $file_worker->get_info(array(
+        'path' => '/cache'
+    ));
+
+    if(TRUE !== $response['is_writeable']) return FALSE;
+
+    /** Cache Folder */
+    $response = $file_worker->get_info(array(
+        'path' => '/includes'
+    ));
+
+    if(TRUE !== $response['is_writeable']) return FALSE;
+
+    /** Index File */
+    $response = $file_worker->get_info(array(
+        'path' => 'index.php'
+    ));
+
+    if(TRUE !== $response['is_writeable']) return FALSE;
+
+    return TRUE;
+}
+
+function stag_backup_includes(){
+    /** File Operator Object */
+    $file_worker = new stag_file_manager('/');
+
+    $maintenance_obj = new stag_maintenance_mod($file_worker);
+
+    $date = 
+
+    /** Move original directory */
+    $response = $file_worker->copy_directory(array(
+        'directory'             => '/includes/',
+        'destination_directory' => '/cache/backup/stag-core/',
+        'merge_directory'       => TRUE,
+        'overwrite_file'        => TRUE
+    ));
+
+    if(TRUE === $response['status']) return TRUE;
+
+    return FALSE;
+}
+
+function stag_extract_latest_build(){
+    /** File Operator Object */
+    $file_worker = new stag_file_manager('/');
+
+    /** Move original directory */
+    $result = $file_worker->extract_zip(array(
+        'directory'             => '/cache/updates/',
+        'zip_file'              => 'stag.zip',
+        'destination_directory' => '/',
+        'overwrite_file'        => TRUE
+    ));
+
+    if(TRUE === $result['status']) return TRUE;
+
+    return FALSE;
+}
+
+function stag_clean_update_residue(){
+    /** File Operator Object */
+    $file_worker = new stag_file_manager('/');
+
+    /** Delete StagPHP-master Folder */
+    $response = $file_worker->delete_directory(array('directory' => '/StagPHP-master/'));
+
+    if(TRUE !== $response['is_writeable']) return FALSE;
+
+    /** Delete stag.zip Folder */
+    $response = $file_worker->delete_file(array(
+        'directory' => '/cache/updates/',
+        'file_name' => 'stag.zip'
+    ));
+
+    if(TRUE === $response['status']) return TRUE;
+
+    return FALSE;
+}

@@ -29,7 +29,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 1</h2>
-              <span class="stag-ico first stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon first stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">
@@ -43,7 +43,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 1</h2>
-              <span class="stag-ico stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">
@@ -57,7 +57,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 2</h2>
-              <span class="stag-ico stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">
@@ -71,7 +71,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 3</h2>
-              <span class="stag-ico stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">
@@ -85,7 +85,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 4</h2>
-              <span class="stag-ico stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">
@@ -99,7 +99,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 5</h2>
-              <span class="stag-ico stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">
@@ -113,7 +113,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 6</h2>
-              <span class="stag-ico stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">
@@ -127,7 +127,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
           <div class="widget-body">
             <div class="header px-3">
               <h2 class="title">Widget Title 7</h2>
-              <span class="stag-ico stag-ico-up-arrow widget-minimize"></span>
+              <span class="stag-icon stag-icon-up-arrow widget-minimize"></span>
             </div>
             <div class="body">
               <div class="p-3">

@@ -5,6 +5,37 @@ function custom_scrollbar(){
   Scrollbar.init(document.querySelector('.nice-scroll'));
 }
 
+function stag_php_debug_console(event, log = null){
+  if('init' == event){
+    console.log("%c StagPHP %c DOM Development & Debug", "color: white; background: rgb(0,172,193); font-size: 24px; font-weight: bold; font-style: italic;", "font-size: 24px; font-weight: normal;");
+  }
+  
+  else if('error' == event){
+    console.log('%c ERROR %c' + log, 'color: white; background: rgb(192,57,43); font-weight: bold;', '');
+  }
+
+  else if('success' == event){
+    console.log('%c SUCCESS %c ' + log, 'color: white; background: rgb(120,194,87); font-weight: bold; font-style: italic;', '');
+  }
+
+  else if('warning' == event){
+    console.log('%c WARNING %c ' + log, 'color: white; background: rgb(230,126,34); font-weight: bold; font-style: italic;', '');
+  }
+}
+
+function spinner_remove(element){
+  element.removeClass('spinner-active spinner-added').find('div.spinner').animate({
+    'opacity': 0
+  }, 200, function(){
+    $(this).remove();
+    element.addClass('spinner-removed');
+  });
+}
+
+function render_spinner(){
+  $('.spinner-active.inner-html.div-type-spinner').not('.spinner-added').prepend('<div class="spinner"><svg width="1em" height="1em"><circle cx="0.5em" cy="0.5em" r="0.45em"/></svg></div>').addClass('spinner-added');
+}
+
 
 
 // Js Click as JS Link
@@ -139,6 +170,7 @@ function notify(data, type){
 
 
 function stag_core_update(){
+  // Get core update last check variable from cookie
   var last_update_check = Cookies.get('CYZ_CU_LC');
 
   if(last_update_check){
@@ -149,33 +181,40 @@ function stag_core_update(){
   
   else {
     $.ajax({
-      url: manage_update_rep,
+      url: stag_api_ep_core_update,
       method: "POST",
-      data: {action: "check-core-update"}
-    }).done(function(result){ 
-      var data = JSON.parse(result);
+      data: {action: "check-update"}
+    }).done(function(data_received){
+      var data = JSON.parse(data_received);
 
-      if('update-available' == data['description']){
-        var msg = 'Update_Available_V_' + data['response'];
+      if(!data['status']) {
+        stag_php_debug_console('error', data['description']);
+        return;
+      }
+
+      var result = data['result'];
+
+      if(result['response']){
+        var msg = 'Update_Available_V_' + response['version'];
       
         Cookies.set('CYZ_CU_LC', msg, {expires: 1});
 
         notify(msg, 'update');
-      }
-
-      else if('update-to-date' == data['description']){
+      } else {
         var msg = 'updated';
 
         Cookies.set('CYZ_CU_LC', msg, {expires: 1});
       }
     }).fail(function(jqXHR, textStatus){
-      console.log("Request failed: " + textStatus);
+      stag_php_debug_console('error', textStatus);
     });
   }
 }
 
 
 function function_sequence() {
+  stag_php_debug_console('init');
+
   try { custom_scrollbar(); } catch (err) {}
   try { hammer_int(); } catch (err) {}
   try { js_click(); } catch (err) {}

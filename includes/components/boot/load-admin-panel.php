@@ -45,6 +45,12 @@ stag_attach_controller('/core/integration/app/main.php', 'components');
 /** Integrate Application With StagPHP */
 stag_attach_controller('/core/templating-engine/functions.php', 'components');
 
+/** Integrate Application With StagPHP */
+stag_attach_controller('/core/integration/plugins/main.php', 'components');
+
+/** Integrate view with admin panel */
+integrate_plugins();
+
 /** Integrate Navigation With StagPHP */
 stag_attach_controller('/render-ui/navigation.php', 'admin');
 

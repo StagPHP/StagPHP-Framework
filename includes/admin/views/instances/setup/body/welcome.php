@@ -20,7 +20,7 @@ $form_action = 'build_selection'; ?>
             <div class="cyz-fb-title">
               <div class="title-block bg-secondary">
                 <p class="text-white">
-                  <span class="stag-ico stag-ico-person"></span>
+                  <span class="stag-icon stag-icon-person"></span>
                   <span>StagPHP Installation</span>
                 </p>
               </div>

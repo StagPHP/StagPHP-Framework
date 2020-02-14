@@ -56,6 +56,9 @@ function stag_attach_controller($absolute_file_path, $from_container = null){
     /** Attach Controller from StagPHP Admin Directory */
     elseif('admin' == $from_container) $file = STAG_ADMIN_CONTROLLERS_DIR.$absolute_file_path;
 
+    /** Attach Controller from StagPHP Admin Directory */
+    elseif('admin-api' == $from_container) $file = STAG_ADMIN_DIR.'/api'.$absolute_file_path;
+
     /** Attach Controller from StagPHP Components Directory */
     elseif('components' == $from_container) $file = STAG_COMPONENTS_DIR.$absolute_file_path;
 

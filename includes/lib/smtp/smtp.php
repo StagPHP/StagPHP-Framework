@@ -19,8 +19,6 @@ class cyz_smtp{
   private $method;
   private $api;
 
-
-
   function __construct($from_name, $from_email, $template_dir = null, $method = null, $api = null){
     /** If Directory location is not provided */
     if(empty($template_dir)) $template_dir = __DIR__.'/email-templates';

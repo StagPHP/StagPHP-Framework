@@ -1,7 +1,7 @@
 <?php
 
 // Ajax Core update
-stag_add_route('/'.ADMIN_PANEL_SLUG.'/manage-update-rep/', '/instances/ajax/updates/core-update.php', TRUE);
+// stag_add_route('/'.ADMIN_PANEL_SLUG.'/manage-update-rep/', '/instances/ajax/updates/core-update.php', TRUE);
 
 // AJAX
 stag_add_route('/'.ADMIN_PANEL_SLUG.'/ajax-app-upload/', '/instances/ajax/app-deploy/upload.php', TRUE);
@@ -14,3 +14,6 @@ stag_add_route('/'.ADMIN_PANEL_SLUG.'/ajax-ce-sv/', '/instances/ajax/get-code/ge
 
 // REST API EP - Fetch JDB Tables
 stag_add_route('/'.ADMIN_PANEL_SLUG.'/ajax-app-model/', '/instances/ajax/app-model/get-jdb-tables.php', TRUE);
+
+
+stag_add_route('/'.ADMIN_PANEL_SLUG.'/api/internal/core-update/', '/api/core-update.php', TRUE);

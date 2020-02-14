@@ -5,12 +5,12 @@
 
     <p class="menu">
       <a href="<?php echo get_home_url(); ?>" target="_blank">
-        <span class="stag-ico stag-ico-new-window"></span> App Frontend
+        <span class="stag-icon stag-icon-new-window"></span> App Frontend
       </a>
     </p>
     <p class="menu">
       <a href="<?php echo get_home_url().'/su-panel/'; ?>">
-        <span class="stag-ico stag-ico-dashboard"></span> Dashboard
+        <span class="stag-icon stag-icon-dashboard"></span> Dashboard
       </a>
     </p>
 
@@ -18,14 +18,14 @@
 
     <p class="menu">
       <a href="<?php echo get_home_url().'/su-panel/app-model/'; ?>">
-        <span class="stag-ico stag-ico-database"></span> APP Model
+        <span class="stag-icon stag-icon-database"></span> APP Model
       </a>
     </p>
 
     <p class="menu drop-down" data-submenu-id="app-view">
       <a href="#">
-        <span class="stag-ico stag-ico-visibility"></span> APP Views
-        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
+        <span class="stag-icon stag-icon-visibility"></span> APP Views
+        <span class="stag-icon stag-icon-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-app-view">
@@ -34,15 +34,15 @@
 
     <p class="menu">
       <a href="#">
-        <span class="stag-ico stag-ico-controller"></span> APP Controllers
+        <span class="stag-icon stag-icon-controller"></span> APP Controllers
       </a>
     </p>
 
     <div class="menu-gap"></div>
 
     <p class="menu">
-      <a href="#">
-        <span class="stag-ico stag-ico-controller"></span> Addons
+      <a href="<?php echo get_home_url().'/su-panel/stagons/'; ?>">
+        <span class="stag-icon stag-icon-controller"></span> StagONS
       </a>
     </p>
 
@@ -50,8 +50,8 @@
 
     <p class="menu drop-down" data-submenu-id="management">
       <a href="#">
-        <span class="stag-ico stag-ico-management"></span> Management
-        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
+        <span class="stag-icon stag-icon-management"></span> Management
+        <span class="stag-icon stag-icon-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-management">
@@ -62,8 +62,8 @@
 
     <p class="menu drop-down" data-submenu-id="settings">
       <a href="#">
-        <span class="stag-ico stag-ico-tune"></span> Settings
-        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
+        <span class="stag-icon stag-icon-tune"></span> Settings
+        <span class="stag-icon stag-icon-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-settings">
@@ -74,8 +74,8 @@
 
     <p class="menu drop-down" data-submenu-id="tools">
       <a href="#">
-        <span class="stag-ico stag-ico-tools"></span> Tools
-        <span class="stag-ico stag-ico-add dropdown-icon expand"></span>
+        <span class="stag-icon stag-icon-tools"></span> Tools
+        <span class="stag-icon stag-icon-add dropdown-icon expand"></span>
       </a>
     </p>
     <p class="sub-menu" id="sub-menu-tools">
@@ -87,7 +87,7 @@
 
     <p class="menu">
       <a href="#">
-        <span class="stag-ico stag-ico-logout"></span> Logout
+        <span class="stag-icon stag-icon-logout"></span> Logout
       </a>
     </p>
 
