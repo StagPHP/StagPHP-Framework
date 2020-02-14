@@ -1,7 +1,7 @@
 <?php
 
 function stag_get_latest_build_version(){
-    $repository_url = 'https://raw.githubusercontent.com/StagPHP/StagPHP/master/';
+    $repository_url = 'https://raw.githubusercontent.com/StagPHP/StagPHP-Framework/master/';
 
     // Create new file manger instance
     $file_manager = new stag_file_manager('/');
@@ -26,7 +26,7 @@ function stag_get_latest_build_version(){
 
 function stag_download_latest_build(){
     // Updated File Loc
-    $remote_url = "https://github.com/StagPHP/StagPHP/archive/master.zip";
+    $remote_url = "https://github.com/StagPHP/StagPHP-Framework/archive/master.zip";
 
     // Create new file manger instance
     $file_manager = new stag_file_manager('/');

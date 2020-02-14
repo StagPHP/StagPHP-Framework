@@ -66,7 +66,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
 </div>
 
 <script>
-  var app_view = "<?php echo get_admin_panel_url().'/ajax-sv/'; ?>";
+  var stag_get_static_view_list = "<?php echo get_admin_panel_url().'/api/internal/get-static-view-list/'; ?>";
   var app_view_editor = "<?php echo get_admin_panel_url().'/app-view-editor/'; ?>";
   var key  = "<?php echo $key; ?>";
   var name = "<?php echo $view_name; ?>";

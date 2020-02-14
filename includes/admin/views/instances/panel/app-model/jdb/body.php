@@ -73,5 +73,5 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
 </div>
 
 <script>
-  var app_model_query = "<?php echo get_admin_panel_url().'/ajax-app-model/'; ?>";
+  var app_model_query = "<?php echo get_admin_panel_url().'/api/internal/get-jdb-tables/'; ?>";
 </script>

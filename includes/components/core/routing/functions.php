@@ -157,7 +157,7 @@ function stag_route_junction(){
 
     /** Load StagPHP Application */
     if(empty($slug_array[0]) || ADMIN_PANEL_SLUG != $slug_array[0]) {
-        GLOBAL $APP_VIEW_LOADED; $APP_VIEW_LOADED = 1;
+        GLOBAL $APP_VIEW_LOADED; $APP_VIEW_LOADED = TRUE;
 
         /** Check if StagAPP folder is created 
          * than load application */

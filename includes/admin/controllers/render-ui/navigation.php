@@ -1,7 +1,7 @@
 <?php
 
 function render_view_nav(){
-  $nav_data_array = ssp_get_view_list();
+  $nav_data_array = stag_model_get_view_types();
 
   if(empty($nav_data_array) || !is_array($nav_data_array)) return '';
 

@@ -12,7 +12,9 @@ stag_attach_controller('/functions/secure-request-internal.php', 'admin-api');
 stag_attach_controller('/core/update-management/core/init.php', 'components');
 
 /** Error response if action is not defined */
-if(empty($_POST['action'])) error_response('Request not specified!');
+if(empty($_POST['action'])) error_response(array(
+    'description'   => 'Request not specified!'
+));
 
 /** Check For Update */
 else if('check-update' == $_POST['action']){
@@ -135,4 +137,6 @@ else if('finish-update' == $_POST['action']){
 }
 
 /** Error response */
-else error_response('Invalid request!');
+else error_response(array(
+    'description'   => 'Invalid request!'
+));

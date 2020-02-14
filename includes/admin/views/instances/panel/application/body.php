@@ -111,7 +111,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
                 </div>
 
                 <!-- Upload form -->
-                <form class="form" id="upload_package" method="post" action="<?php echo get_home_url().'su-panel/ajax-app-upload/'; ?>" enctype="multipart/form-data">
+                <form class="form" id="upload_package" method="post" action="<?php echo get_home_url().'su-panel/api/internal/upload-application-package/'; ?>" enctype="multipart/form-data">
 
                   <!-- Actual Form -->
                   <div class="form-body max-800">

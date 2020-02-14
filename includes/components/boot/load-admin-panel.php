@@ -33,11 +33,20 @@ stag_attach_controller('/core/update-management/core/functions.php', 'components
 /** StagPHP Maintenance Page */
 stag_attach_controller('/core/maintenance/functions.php', 'components');
 
-/** Include app DB main library */
-stag_attach_controller('/core/module-controllers/jdb/logic.php', 'components');
-
 /** Integrate URL routing logic With StagPHP */
 stag_attach_controller('/core/integration/routing.php', 'components');
+
+/** Include app DB main library */
+stag_attach_controller('/jdb/JDB.php', 'library');
+
+/** Setting Global - APP JSON DB Object */
+GLOBAL $APP_JSON_DB;
+
+/** Creating JSON DB Object */
+$APP_JSON_DB = new CYZ_JDB(STAG_CONTAINER_DIR.'/jdb/');
+
+/** Include app DB main library */
+stag_attach_controller('/core/model/jdb/app-model.php', 'components');
 
 /** Integrate Application With StagPHP */
 stag_attach_controller('/core/integration/app/main.php', 'components');
@@ -61,4 +70,4 @@ stag_attach_controller('/panel/enqueue.php', 'admin');
 stag_attach_controller('/routing/main.php', 'admin');
 
 /** Integrate view with admin panel */
-integrate_view();
+stag_create_navigation_for_view_types();

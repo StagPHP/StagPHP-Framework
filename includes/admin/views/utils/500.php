@@ -1,6 +1,6 @@
 <?php
 
-header("HTTP/1.0 404 Not Found"); ?>
+header("HTTP/1.0 500 Internal Server Error"); ?>
 
 <!DOCTYPE HTML SYSTEM>
 <html>
@@ -8,7 +8,7 @@ header("HTTP/1.0 404 Not Found"); ?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>404 - Page Not Found</title>
+  <title>500 - Internal Server Error</title>
   <meta name="description" content="The requested URL was not found on this server">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo:400,400i,700,700i">
@@ -27,9 +27,9 @@ header("HTTP/1.0 404 Not Found"); ?>
 
     <div style="display: table-cell; vertical-align: middle;">
 
-      <p style="color: #555; font-size: 200%; margin: 10px 0;">404 - Page Not Found</p>
+      <p style="color: #555; font-size: 200%; margin: 10px 0;">500 - Internal Server Error</p>
       <p style="color: #555; max-width: 300px; margin: 0 auto;">
-      The requested URL was not found on this server. If you entered the URL manually please check your spelling and try again.
+        View instance defined for routing was not found in server!
       </p>
     </div>
 

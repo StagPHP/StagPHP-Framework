@@ -1,10 +1,5 @@
 <?php
 
-// $view_name = $_GET['type'];
-// $view_name_formatted = ucwords(str_replace('_', ' ', $_GET['type']));
-
-$key = "12345";
-
 /** CYZ VR: View Resources */
 $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
 
@@ -91,7 +86,7 @@ $resource_dir = get_assets_dir_uri(NULL, TRUE); ?>
 </div>
 
 <script>
-  var app_edit = "<?php echo get_admin_panel_url().'/ajax-ce-sv/'; ?>";
+  var app_edit = "<?php echo get_admin_panel_url().'/api/internal/get-view-instance-code/'; ?>";
   var key  = "<?php echo $key; ?>";
   var id = "<?php echo $_GET['id']; ?>";
 </script>

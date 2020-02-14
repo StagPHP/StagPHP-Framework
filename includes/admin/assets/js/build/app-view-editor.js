@@ -1,33 +1,33 @@
 var start_time;
 var end_time;
 
-function get_time(){
+function get_time() {
   var d = new Date();
   return d.getTime();
 }
 
 
-function start_loading(){
+function start_loading() {
   $('#fe-php-editor, .sidebar-content').css('display', 'none');
   $('.block-loading').css('display', '');
 }
 
 
-function show_error(){
+function show_error() {
   // $('.lv-lists.error').css('display', '');
 }
 
-function show_no_result(){
+function show_no_result() {
   // $('.lv-lists.no-result').css('display', '');
 }
 
-function show_view(){
+function show_view() {
   $('.sidebar-content').css('display', '');
 }
 
 
 
-function load_editor(response){
+function load_editor(response) {
   $('#fe-php-editor').text(response);
 
 
@@ -54,7 +54,7 @@ function load_editor(response){
 
 
 
-function loaded(response, function_name){
+function loaded(response, function_name) {
   js_click();
 
   end_time = get_time();
@@ -63,7 +63,7 @@ function loaded(response, function_name){
 
   var delay = 2000;
 
-  if(time_diff < delay) delay = delay - time_diff;
+  if (time_diff < delay) delay = delay - time_diff;
 
   setTimeout(() => {
     $('.block-loading-floating, .block-loading').css('display', 'none');
@@ -74,24 +74,26 @@ function loaded(response, function_name){
 
 
 
-function show_code(result){
+function show_code(result) {
+  try { var data = JSON.parse(result); } catch (e) {}
 
-  try{ var data = JSON.parse(result); } catch(e) {}
-  
+  console.log(data);
+
   if(data && 'success' == data['status']){
 
     var response = data['response'];
-      loaded(data['response'], show_view);
-    } else {
-      // loaded(show_no_result);
-    }
+
+    loaded(response, show_view);
+  } else {
+    // loaded(show_no_result);
+  }
 
   // loaded(show_error);
 }
 
 
 
-function get_code(){
+function get_code() {
   start_time = get_time();
 
   $.ajax({
@@ -100,11 +102,11 @@ function get_code(){
     data: {
       id: id
     }
-  }).done(function(result){
-    
+  }).done(function (result) {
+
     show_code(result);
-    
-  }).fail(function() {
+
+  }).fail(function () {
 
     // loaded(show_error);
 
@@ -113,6 +115,8 @@ function get_code(){
 
 
 
-function view_specific_function(){
-  try { get_code(); } catch (err) {}
+function view_specific_function() {
+  try {
+    get_code();
+  } catch (err) {}
 }

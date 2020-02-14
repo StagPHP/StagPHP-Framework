@@ -33,3 +33,8 @@ function ssp_get_active_plugins(){
   /** get and return app view data */
   return get_app_data($table_name);
 }
+
+function ssp_get_view_list_of_type($name){
+  /** get and return app view data */
+  return get_app_data($name);
+}

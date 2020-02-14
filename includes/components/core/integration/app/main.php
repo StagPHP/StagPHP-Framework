@@ -1,5 +1,8 @@
 <?php
 
+/** Integrate Application With StagPHP */
+stag_attach_controller('/core/integration/app/view/functions.php', 'components');
+
 /** Include Watcher and Compiler Scripts */
 stag_attach_controller('/core/integration/app/functions.php', 'components');
 

@@ -23,7 +23,11 @@ function stag_startup(){
 
     /** App view loaded */
     GLOBAL $APP_VIEW_LOADED;
-    $APP_VIEW_LOADED = 0;
+    $APP_VIEW_LOADED = FALSE;
+
+    /** Define 404 Page */
+    GLOBAL $VIEW_LOADED;
+    $VIEW_LOADED = TRUE;
 
     /** Define 404 Page */
     GLOBAL $APP_404;

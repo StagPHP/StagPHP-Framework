@@ -36,8 +36,6 @@ function render_spinner(){
   $('.spinner-active.inner-html.div-type-spinner').not('.spinner-added').prepend('<div class="spinner"><svg width="1em" height="1em"><circle cx="0.5em" cy="0.5em" r="0.45em"/></svg></div>').addClass('spinner-added');
 }
 
-
-
 // Js Click as JS Link
 function js_click(){
   $("[data-href]").on('click', function () {
