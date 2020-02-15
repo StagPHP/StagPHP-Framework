@@ -156,9 +156,9 @@ function stag_clean_update_residue(){
     $file_worker = new stag_file_manager('/');
 
     /** Delete StagPHP-master Folder */
-    $response = $file_worker->delete_directory(array('directory' => '/StagPHP-master/'));
+    $response = $file_worker->delete_directory(array('directory' => '/StagPHP-Framework-master/'));
 
-    if(TRUE !== $response['is_writeable']) return FALSE;
+    if(TRUE !== $result['status']) return FALSE;
 
     /** Delete stag.zip Folder */
     $response = $file_worker->delete_file(array(

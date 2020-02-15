@@ -26,7 +26,7 @@ $file_worker->delete_directory(array('directory' => '/includes/'));
 
 /** Move extracted directory */
 $file_worker->move_directory(array(
-    'directory'             => '/stagPHP-master/includes/',
+    'directory'             => '/StagPHP-Framework-master/includes/',
     'destination_directory' => '/',
     'merge_directory'       => TRUE,
     'overwrite_file'        => TRUE
