@@ -67,6 +67,9 @@ function stag_startup(){
     else {
         /** Disable Debug */
         if(!defined('STAGPHP_DEBUG_ENABLED')) define('STAGPHP_DEBUG_ENABLED', FALSE);
+
+        /** Integrate Navigation With StagPHP */
+        stag_attach_controller('/enqueue.php', 'admin');
     
         /** 
          * If StagPHP is not configured Start StagPHP setup

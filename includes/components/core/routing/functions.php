@@ -164,7 +164,7 @@ function stag_route_junction(){
         if(file_exists(STAG_APP_DIR)) require_once(STAG_COMPONENTS_DIR.'/boot/load-app.php');
 
         /** if StagAPP folder is created show No App Page */
-        else {
+        else if(empty($slug_array[0])) {
             require_once(STAG_ADMIN_VIEWS_DIR.'/utils/no-app.php');
             GLOBAL $APP_404;
             $APP_404 = FALSE;

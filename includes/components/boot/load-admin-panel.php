@@ -18,12 +18,6 @@ stag_attach_controller('/cmd/main.php', 'library');
  * command line execution */
 stag_attach_controller('/file-manager/file-manager.php', 'library');
 
-/** StagPHP Memory Cache */
-stag_attach_controller('/core/memory-cache.php', 'components');
-
-/** StagPHP Session Cache */
-stag_attach_controller('/core/session-cache.php', 'components');
-
 /** StagPHP Parse Comment */
 stag_attach_controller('/core/parse-comment.php', 'components');
 
@@ -52,9 +46,6 @@ stag_attach_controller('/core/model/jdb/app-model.php', 'components');
 stag_attach_controller('/core/integration/app/main.php', 'components');
 
 /** Integrate Application With StagPHP */
-stag_attach_controller('/core/templating-engine/functions.php', 'components');
-
-/** Integrate Application With StagPHP */
 stag_attach_controller('/core/integration/plugins/main.php', 'components');
 
 /** Integrate view with admin panel */
@@ -64,7 +55,7 @@ integrate_plugins();
 stag_attach_controller('/render-ui/navigation.php', 'admin');
 
 /** Integrate Navigation With StagPHP */
-stag_attach_controller('/panel/enqueue.php', 'admin');
+stag_attach_controller('/enqueue.php', 'admin');
 
 /** Get Admin Routing */
 stag_attach_controller('/routing/main.php', 'admin');

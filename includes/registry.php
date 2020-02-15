@@ -10,7 +10,7 @@
  * StagPHP Framework Version Identifier
  * 
  * Purpose:   Defining the Global Variable storing STAG_VERSION */
-if(!defined('STAG_VERSION')) define('STAG_VERSION', '1.0.3');
+if(!defined('STAG_VERSION')) define('STAG_VERSION', '1.0.4');
 
 /** StagPHP APP Directory */
 if(!defined('STAG_APP_DIR'))
