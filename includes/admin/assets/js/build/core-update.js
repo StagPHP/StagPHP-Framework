@@ -26,9 +26,11 @@ function complete_core_update_step() {
 // SEQUENTIAL FUNCTION
 // =========================================
 function stag_core_update_finish_installation() {
-  update_core_update_step('Finalizing installation.');
+  $('#stag-update-description').html('StagPHP has been updated successfully! Explore what new in this update before you continue with your work, thank you.');
 
-  stag_core_update_actions('finish-update', complete_core_update_step);
+  update_core_update_step('Update installed successfully.');
+
+  complete_core_update_step();
 }
 
 function stag_core_update_install_update() {
@@ -64,6 +66,10 @@ function stag_core_update_check_environment() {
 }
 
 $('#stagphp-core-update-init').on('click', function () {
+  $('#stag-update-description').html('StagPHP core update has been started! please standby and do not reload this page! Incase of any interruption or failure, you can simply restart this process.');
+
+  $('#stagphp-core-update-init').remove();
+
   stag_core_update_check_environment();
 });
 
@@ -96,9 +102,13 @@ function stag_core_update_actions(action, function_name) {
     } else {
       stag_php_debug_console('warning', 'Update Stopped! description:' + data['description']);
 
+      $('#stag-update-description').html('StagPHP core update has been started! please standby and do not reload this page! Incase of any interruption or failure, you can simply restart this process.');
+
       error_occurred_core_update_step();
     }
   }).fail(function (jqXHR, textStatus) {
+    $('#stag-update-description').html('Error occurred during StagPHP core update! Please reload this page and restart the process. If StagPHP is not working correctly, reinstall update manually. Sorry for your inconvenience.');
+  
     stag_php_debug_console('error', 'Request failed: ' + textStatus);
   });
 }

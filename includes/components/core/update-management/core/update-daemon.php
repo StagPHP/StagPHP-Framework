@@ -75,7 +75,7 @@ else if('extraction-completed' == $_SESSION['stag_core_update_status']){
 
     /** Move extracted directory */
     $file_worker->move_directory(array(
-        'directory'             => '/stagPHP-master/includes/',
+        'directory'             => '/StagPHP-Framework-master/includes/',
         'destination_directory' => '/',
         'merge_directory'       => TRUE,
         'overwrite_file'        => TRUE
@@ -86,6 +86,7 @@ else if('extraction-completed' == $_SESSION['stag_core_update_status']){
         'directory'             => '/StagPHP-Framework-master/',
         'file_name'             => 'index.php',
         'destination_directory' => '/',
+        'new_file_name'         => 'index.php.backup',
         'overwrite_file'        => TRUE
     ));
 
@@ -97,8 +98,16 @@ else if('extraction-completed' == $_SESSION['stag_core_update_status']){
         'overwrite_file'        => TRUE
     ));
 
-    /** Delete Directory */
-    $file_worker->delete_directory(array('directory' => '/StagPHP-master/'));
+    /** Delete StagPHP-master Folder */
+    $response = $file_worker->delete_directory(array(
+        'directory' => '/StagPHP-Framework-master/'
+    ));
+
+    /** Delete stag.zip Folder */
+    $response = $file_worker->delete_file(array(
+        'directory' => '/cache/updates/',
+        'file_name' => 'stag.zip'
+    ));
 
     $maintenance_obj = new stag_maintenance_mod($file_worker);
 

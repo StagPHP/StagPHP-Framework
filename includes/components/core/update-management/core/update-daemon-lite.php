@@ -49,6 +49,17 @@ $file_worker->move_file(array(
     'overwrite_file'        => TRUE
 ));
 
+/** Delete StagPHP-master Folder */
+$response = $file_worker->delete_directory(array(
+    'directory' => '/StagPHP-Framework-master/'
+));
+
+/** Delete stag.zip Folder */
+$response = $file_worker->delete_file(array(
+    'directory' => '/cache/updates/',
+    'file_name' => 'stag.zip'
+));
+
 $maintenance_obj->disable();
 
 echo json_encode(array(

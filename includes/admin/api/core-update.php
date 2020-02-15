@@ -118,24 +118,6 @@ else if('install-update' == $_POST['action']){
     stag_initialize_core_update('lite');
 }
 
-/** Install update */
-else if('finish-update' == $_POST['action']){
-    /** Success response after downloading
-     * latest build of StagPHP */
-    if(TRUE === stag_clean_update_residue())
-    success_response(array(
-        'description'   => 'Installation finished!',
-        'result'        => array(
-            'response'      => TRUE
-        )
-    ));
-
-    /** Error response download failed */
-    error_response(array(
-        'description'   => 'Installation finished, cleanup failed!',
-    ));
-}
-
 /** Error response */
 else error_response(array(
     'description'   => 'Invalid request!'

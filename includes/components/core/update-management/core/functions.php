@@ -155,27 +155,3 @@ function stag_extract_latest_build(){
 
     return FALSE;
 }
-
-function stag_clean_update_residue(){
-    /** File Operator Object */
-    $file_worker = new stag_file_manager('/');
-
-    /** Delete StagPHP-master Folder */
-    $response = $file_worker->delete_directory(array('directory' => '/StagPHP-Framework-master/'));
-
-    var_dump($response);
-
-    if(TRUE !== $result['status']) return FALSE;
-
-    /** Delete stag.zip Folder */
-    $response = $file_worker->delete_file(array(
-        'directory' => '/cache/updates/',
-        'file_name' => 'stag.zip'
-    ));
-
-    var_dump($response);
-
-    if(TRUE !== $response['status']) return FALSE;
-
-    return TRUE;
-}
