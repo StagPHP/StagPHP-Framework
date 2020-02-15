@@ -89,7 +89,12 @@ function stag_check_update_requirements(){
     /** File Operator Object */
     $file_worker = new stag_file_manager('/');
 
-    /** Includes Folder */
+    /** Create cache directory if does not exists */
+    $file_worker->create_directory(array(
+        'directory' => '/cache'
+    ));
+
+    /** Check cache directory */
     $response = $file_worker->get_info(array(
         'path' => '/cache'
     ));

@@ -25,6 +25,9 @@ $response = stag_is_update_available(); ?>
             </div>
             <div class="col-lg-10 col-sm-12">
               <p class="my-3"><span id="stag-update-description">New version of StagPHP (V <?php echo $response[1]; ?>) is available. You have outdated StagPHP (V <?php echo STAG_VERSION; ?>). Update StagPHP now for better security.</span></p>
+              <ul id="core-update-step-response" class="stag-check-list my-3">
+
+              </ul>
               <p class="my-3">
                 <a id="stagphp-core-update-init" class="btn cta-primary btn-rounded px-2" href="#">Update</a>
               </p>
@@ -39,11 +42,6 @@ $response = stag_is_update_available(); ?>
             </div>
             <div class="col-lg-10 col-sm-12">
               <p class="my-3"><span>Congratulations! Latest version of StagPHP framework (V <?php echo STAG_VERSION; ?>) is installed. Automatic update is also enabled! So, StagPHP will update automatically while you focus on more important tasks. If you want to rollback the last update, follow the documentation.</span></p>
-              <ul id="core-update-step-response" class="stag-check-list my-3">
-                <!-- <li class="un-checked"><span>Checking Update Requirement</span></li> -->
-                <!-- <li class="error"><span>Backing Up Files</span></li>
-                <li class="un-checked"><span>Downloading Update</span></li> -->
-              </ul>
             </div>
           </div>
         <?php endif; ?>

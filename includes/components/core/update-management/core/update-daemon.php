@@ -81,6 +81,22 @@ else if('extraction-completed' == $_SESSION['stag_core_update_status']){
         'overwrite_file'        => TRUE
     ));
 
+    /** Move Index file */
+    $file_worker->move_file(array(
+        'directory'             => '/StagPHP-Framework-master/',
+        'file_name'             => 'index.php',
+        'destination_directory' => '/',
+        'overwrite_file'        => TRUE
+    ));
+
+    /** Move Index file */
+    $file_worker->move_file(array(
+        'directory'             => '/StagPHP-Framework-master/',
+        'file_name'             => 'readme.md',
+        'destination_directory' => '/',
+        'overwrite_file'        => TRUE
+    ));
+
     /** Delete Directory */
     $file_worker->delete_directory(array('directory' => '/StagPHP-master/'));
 

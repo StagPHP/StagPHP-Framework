@@ -12,7 +12,7 @@ function stag_initialize_core_update($type){
 
     /** Copy config file */
     $file_copied = $file_worker->copy_file(array(
-        'directory'             => '/includes/components/core/update-management/core/init.php',
+        'directory'             => '/includes/components/core/update-management/core/',
         'file_name'             => $file_name,
         'destination_directory' =>'/',
         'create_directories'    => TRUE,

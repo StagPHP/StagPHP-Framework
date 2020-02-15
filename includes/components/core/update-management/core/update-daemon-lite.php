@@ -32,12 +32,30 @@ $file_worker->move_directory(array(
     'overwrite_file'        => TRUE
 ));
 
+/** Move Index file */
+$file_worker->move_file(array(
+    'directory'             => '/StagPHP-Framework-master/',
+    'file_name'             => 'index.php',
+    'destination_directory' => '/',
+    'overwrite_file'        => TRUE
+));
+
+/** Move Index file */
+$file_worker->move_file(array(
+    'directory'             => '/StagPHP-Framework-master/',
+    'file_name'             => 'readme.md',
+    'destination_directory' => '/',
+    'overwrite_file'        => TRUE
+));
+
 $maintenance_obj->disable();
 
 echo json_encode(array(
-    'status'        => 'success',
-    'description'   => 'StagPHP Updated',
-    'response'      => 'update-installed'
+    'status'        => TRUE,
+    'description'   => 'Update installed!',
+    'result'        => array(
+        'response'      => TRUE
+    )
 ));
 unlink(ABSPATH.'/update.php');
 exit;

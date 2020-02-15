@@ -151,8 +151,6 @@ function widget_drag(){
 }
 
 function notify(data, type){
-  console.log(data);
-
   $('.no-notify').remove();
 
   $('#notification-list').append('<tr class="alert" data-notify="' +
@@ -193,7 +191,7 @@ function stag_core_update(){
       var result = data['result'];
 
       if(result['response']){
-        var msg = 'Update_Available_V_' + response['version'];
+        var msg = 'Update_Available_V_' + result['version'];
       
         Cookies.set('CYZ_CU_LC', msg, {expires: 1});
 
