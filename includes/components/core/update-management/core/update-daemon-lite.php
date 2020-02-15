@@ -37,6 +37,7 @@ $file_worker->move_file(array(
     'directory'             => '/StagPHP-Framework-master/',
     'file_name'             => 'index.php',
     'destination_directory' => '/',
+    'new_file_name'         => 'index.php.backup',
     'overwrite_file'        => TRUE
 ));
 

@@ -163,6 +163,8 @@ function stag_clean_update_residue(){
     /** Delete StagPHP-master Folder */
     $response = $file_worker->delete_directory(array('directory' => '/StagPHP-Framework-master/'));
 
+    var_dump($response);
+
     if(TRUE !== $result['status']) return FALSE;
 
     /** Delete stag.zip Folder */
@@ -171,7 +173,9 @@ function stag_clean_update_residue(){
         'file_name' => 'stag.zip'
     ));
 
-    if(TRUE === $response['status']) return TRUE;
+    var_dump($response);
 
-    return FALSE;
+    if(TRUE !== $response['status']) return FALSE;
+
+    return TRUE;
 }
