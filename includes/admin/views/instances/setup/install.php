@@ -22,6 +22,11 @@ if(isset($_GET['setup'])):
   stag_insert_template('/instances/setup/body/error.php', 'admin');
 
   /** Setup Apache htaccess View */
+  elseif($_GET['setup'] == 'model-selection'):
+  /** Show DB Setup view after processing post request */
+  stag_insert_template('/instances/setup/body/model-selection.php', 'admin');
+
+  /** Setup Apache htaccess View */
   elseif($_GET['setup'] == 'apache'):
   /** Show DB Setup view after processing post request */
   stag_insert_template('/instances/setup/body/apache-setup.php', 'admin');
@@ -33,6 +38,11 @@ if(isset($_GET['setup'])):
 
   /** Setup Super User Credential */
   elseif($_GET['setup'] == 'su'):
+  /** Show DB Setup view after processing post request */
+  stag_insert_template('/instances/setup/body/superuser-setup.php', 'admin');
+
+  /** Setup Super User Credential */
+  elseif($_GET['setup'] == 'final-step'):
   /** Show DB Setup view after processing post request */
   stag_insert_template('/instances/setup/body/superuser-setup.php', 'admin');
 

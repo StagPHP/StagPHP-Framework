@@ -1,10 +1,3 @@
-// Custom Scrollbar for all intances
-function custom_scrollbar(){
-  document.getElementsByClassName('body-content')[0].style.overflow = 'auto';
-  var Scrollbar = window.Scrollbar;
-  Scrollbar.init(document.querySelector('.nice-scroll'));
-}
-
 function stag_php_debug_console(event, log = null){
   if('init' == event){
     console.log("%c StagPHP %c DOM Development & Debug", "color: white; background: rgb(0,172,193); font-size: 24px; font-weight: bold; font-style: italic;", "font-size: 24px; font-weight: normal;");
@@ -210,8 +203,8 @@ function stag_core_update(){
 
 function function_sequence() {
   stag_php_debug_console('init');
+  Scrollbar.initAll();
 
-  try { custom_scrollbar(); } catch (err) {}
   try { hammer_int(); } catch (err) {}
   try { js_click(); } catch (err) {}
   try { sn_dd(); } catch (err) {}
@@ -220,6 +213,7 @@ function function_sequence() {
   try { jdb_get_db(); } catch (err) {}
   try { stag_core_update(); } catch (err) {}
   try { view_specific_function(); } catch (err) {}
+  try { cmf_init(); } catch(err) {}
 }
 
 

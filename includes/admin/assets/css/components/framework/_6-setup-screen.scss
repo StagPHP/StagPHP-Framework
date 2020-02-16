@@ -1,71 +1,97 @@
-.install-form-base{
+.install-form-base {
   display: block;
   max-width: 1000px;
   margin: 0 auto;
   padding: 2%;
 
-  >div{
+  .letter-head {
+    position: relative;
+    background-color: #F7F7F7;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+
+    h1{
+      font-weight: bold;
+      margin: 50px 0 20px;
+    }
+  }
+
+  .letter-head:before, .letter-head:after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 50px;
+    left: -10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .letter-head:before {
+    top: -50px;
+  }
+
+  .letter-head:after {
+    bottom: -50px;
+  }
+
+  >div {
     border-radius: 4px;
     -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2), -1px 2px 3px rgba(0, 0, 0, 0.2);
-            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2), -1px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2), -1px 2px 3px rgba(0, 0, 0, 0.2);
     overflow: hidden;
   }
 
-  .cyz-fb-head{
+  .cyz-fb-head {
     padding: 80px 10px 70px;
-    background-color: #f9f9f9;
+    background-color: #fff;
 
-    >div{
+    >div {
       max-width: 620px;
       padding: 0 10px;
       margin: 0 auto;
     }
   }
 
-  .cyz-fb-title{
-    .title-block{
+  .cyz-fb-title {
+    .title-block {
       padding: 10px;
     }
-    p{
+
+    p {
       text-align: center;
       margin: 0;
+      letter-spacing: 1px;
     }
   }
 
-  .cyz-fb-body{
-    padding: 60px 0;
-    border-top: 1px solid #e7e7e7;
-    background-color: #f2f2f2;
+  .cyz-fb-body {
+    background-color: #fff;
 
-    p{
+    p {
       text-align: justify;
       margin: 10px auto;
 
-      >.btn{
+      >.btn {
         margin: 30px 0 0;
       }
     }
 
-    .cyz-fb-sep{
+    .cyz-fb-sep {
       margin: 60px 0;
     }
 
-    >div{
+    >div {
       max-width: 600px;
       margin: 0 auto;
     }
 
-    form{
-      margin: 20px 0;
-
-      label{
-        font-weight: 700;
-      }
+    form label {
+      font-weight: 700;
+      color: #444;
     }
   }
 
-  .cyz-fb-footer{
-    background-color: #E7E7E7;
-    border-top: 1px solid #d7d7d7;
+  .cyz-fb-footer {
+    background-color: #E9E9E9;
+    border-top: 1px solid #d9d9d9;
   }
 }

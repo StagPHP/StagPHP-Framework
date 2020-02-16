@@ -14,6 +14,11 @@ enqueue_css_backend(array(
     'version'       => 'v1.0.1'
 ));
 enqueue_css_backend(array(
+    'name'          => 'stag-material-form',
+    'relative_url'  => '/vendor/stag-material-form/main.min.css',
+    'version'       => 'v1.0.1',
+));
+enqueue_css_backend(array(
     'name'          => 'color-theme',
     'relative_url'  => '/css/themes/blue-shade.min.css',
     'version'       => 'v1.0.1',
@@ -74,6 +79,11 @@ enqueue_js_backend(array(
 enqueue_js_backend(array(
     'name'          => 'slick',
     'relative_url'  => '/js/components/slick.min.js',
+    'version'       => '1.0.1'
+));
+enqueue_js_backend(array(
+    'name'          => 'stag-material-form',
+    'relative_url'  => '/vendor/stag-material-form/cmf.main.min.js',
     'version'       => '1.0.1'
 ));
 if(defined('SLUG_ARRAY') && !empty(SLUG_ARRAY[1])){

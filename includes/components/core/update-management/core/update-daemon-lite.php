@@ -41,14 +41,6 @@ $file_worker->move_file(array(
     'overwrite_file'        => TRUE
 ));
 
-/** Move Index file */
-$file_worker->move_file(array(
-    'directory'             => '/StagPHP-Framework-master/',
-    'file_name'             => 'readme.md',
-    'destination_directory' => '/',
-    'overwrite_file'        => TRUE
-));
-
 /** Delete StagPHP-master Folder */
 $response = $file_worker->delete_directory(array(
     'directory' => '/StagPHP-Framework-master/'

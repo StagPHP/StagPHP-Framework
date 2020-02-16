@@ -1,9 +1,3 @@
-.hidden {
-  display: none;
-  height: 0;
-  overflow: hidden;
-}
-
 .pull-left {
   float: left;
 }
@@ -18,4 +12,9 @@
 
 .block{
   display: block;
+}
+
+/*Change text in autofill text box*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }

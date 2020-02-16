@@ -3,7 +3,7 @@
 /** Include SU Setup script 
   * SU Script Process POST request
   * on form submit - during installation */
-stag_attach_controller('/setup/superuser/main.php', 'admin');
+stag_attach_controller('/setup/final-step/main.php', 'admin');
 
 $form_token = get_form_token('su_setup_form');
 $form_action = 'su_setup'; ?>
@@ -31,7 +31,7 @@ $form_action = 'su_setup'; ?>
                 <p>Below you should enter superuser credentials. You must create strong password and remember it and also save your password somewhere safe. Incase you lose the password then you need to manually reset it, by editing your superuser config file.</p>
               </div>
               <div class="pb-4">
-                <form class="text-left" method="post" action="<?php echo get_home_url().'/?setup=su'; ?>">
+                <form class="text-left" method="post" action="<?php echo get_home_url().'/?setup=final-step'; ?>">
                   <div class="form-group">
                     <label for="su-username">Superuser name</label>
                     <input type="text" class="form-control" name="su-username" id="su-username" aria-describedby="su-username-help" placeholder="Enter Username" required>
