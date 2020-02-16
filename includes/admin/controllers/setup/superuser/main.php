@@ -10,7 +10,7 @@
 /** Include URL Fetcher to fetch URLs */
 stag_attach_controller('/jdb/JDB.php', 'library');
 
-function save_su_credentials($su_username, $su_password){
+function save_su_credentials($su_username, $su_email, $su_password){
   /** File Operator Object */
   $file_worker = new stag_file_manager('/');
 
@@ -41,6 +41,7 @@ function save_su_credentials($su_username, $su_password){
   // New User
   $new_user = array(
     'su_username' => $su_username,
+    'su_email' => $su_email,
     'su_password' => md5($su_password)
   );
 
@@ -79,6 +80,12 @@ if(verify_form_token($form, $form_action)):
   /** If not valid then push the error to form error */
   else array_push($form_error, 'Superuser ID: '.$valid[1]);
 
+  /** Validate: Superuser email */ 
+  $valid = cyz_input_validate('email', $_POST['su-email']);
+  /** If valid store the email */
+  if($valid[0]) $su_email = $_POST['su-email'];
+  /** If not valid then push the error to form error */
+  else array_push($form_error, 'Superuser Email: '.$valid[1]);
 
   /** Validate: name of the database password */ 
   $valid = cyz_password_validate($_POST['su-password'], $_POST['su-confirm-password'], null);
@@ -87,15 +94,13 @@ if(verify_form_token($form, $form_action)):
   /** If not valid then push the error to form error */
   else array_push($form_error, 'Superuser Password: '.$valid[1]);
 
-
   if($su_username && $su_password){
     // $su_config = cyz_setup_su_config($su_username, $su_password);
-    $su_saved = save_su_credentials($su_username, $su_password);
+    $su_saved = save_su_credentials($su_username, $su_email, $su_password);
 
     if(false === $su_saved['status'])
     array_push($form_error, 'Unexpected: '.$su_config['description']);
   }
-
 
   /** Return form error */
   if(count($form_error) > 0){
@@ -106,10 +111,9 @@ if(verify_form_token($form, $form_action)):
     exit;
   }else{
     /** Redirect to Superuser Dashboard */
-    header("Location: ".get_home_url().'/?setup=completed');
+    header("Location: ".get_home_url().'/?setup=final-step');
     exit;
   }
-
 
 /** Close if statement */
 endif;

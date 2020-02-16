@@ -33,15 +33,21 @@ $form_action = 'su_setup'; ?>
               <div class="pb-4">
                 <form class="text-left" method="post" action="<?php echo get_home_url().'/?setup=su'; ?>">
                   <div class="form-group">
-                    <label for="su-username">Superuser name</label>
+                    <label for="su-username">Superuser Username</label>
                     <input type="text" class="form-control" name="su-username" id="su-username" aria-describedby="su-username-help" placeholder="Enter Username" required>
-                    <small id="su-username-help" class="form-text text-muted"> Username can only contains alpha numeric characters including dash and underscore.</small>
+                    <small id="su-username-help" class="form-text text-muted">Username can only contains alpha numeric characters including dash and underscore.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="su-email">Superuser Email</label>
+                    <input type="text" class="form-control" name="su-email" id="su-email" aria-describedby="su-email-help" placeholder="Enter Email" required>
+                    <small id="su-email-help" class="form-text text-muted">Make sure you enter correct email. Otherwise, you may not be able to reset your password.</small>
                   </div>
 
                   <div class="form-group">
                     <label for="su-password">Superuser Password</label>
                     <input type="password" class="form-control" name="su-password" id="su-password" aria-describedby="su-password-help" placeholder="Enter Password" required>
-                    <small id="su-password-help" class="form-text text-muted"> Enter superuser password. Must contain at least 8 characters.</small>
+                    <small id="su-password-help" class="form-text text-muted">Enter superuser password. Must contain at least 8 characters.</small>
                   </div>
 
                   <div class="form-group">

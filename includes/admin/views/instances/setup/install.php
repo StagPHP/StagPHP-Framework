@@ -44,7 +44,7 @@ if(isset($_GET['setup'])):
   /** Setup Super User Credential */
   elseif($_GET['setup'] == 'final-step'):
   /** Show DB Setup view after processing post request */
-  stag_insert_template('/instances/setup/body/superuser-setup.php', 'admin');
+  stag_insert_template('/instances/setup/body/final-step.php', 'admin');
 
   /** Complete Setup */
   elseif('completed' == $_GET['setup']):

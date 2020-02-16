@@ -8,6 +8,7 @@ function cyz_input_validate($type, $input){
   /** Check if the input characters are valid utf8 characters */
   if(cyz_check_valid_utf8($input)){
     $username = "/(^(^[^\w]|[\_\-])|[^\w])/";
+    $email = "/([a-z0-9\%\+\.\-\+\_]*\@[a-z0-9.-]*\.[a-z]{2,})/";
     $db_name = "/(^(^[^\w]|[\_\-])|[^\w\-\$\#])/";
     $phone_number = "/[^\d]/";
 
@@ -16,10 +17,10 @@ function cyz_input_validate($type, $input){
       if(floatval($input) == $input) return [true, 'Field is valid'];
     }
 
-    /** Validate Phone Number */
-    else if($type == 'phone-number'){
-      $formatted = preg_replace($phone_number, "", $input);
-      if($formatted == $input) return [true, 'Field is valid'];
+    /** Validate Username */
+    else if($type == 'email'){
+      $formatted = preg_replace($email, "", $input);
+      if(empty($formatted)) return [true, 'Field is valid'];
     }
 
     /** Validate Username */
@@ -31,6 +32,12 @@ function cyz_input_validate($type, $input){
     /** Validate Custom Field: Database name */
     else if($type = 'db-name'){
       $formatted = preg_replace($db_name, "", $input);
+      if($formatted == $input) return [true, 'Field is valid'];
+    }
+
+    /** Validate Phone Number */
+    else if($type == 'phone-number'){
+      $formatted = preg_replace($phone_number, "", $input);
       if($formatted == $input) return [true, 'Field is valid'];
     }
 
