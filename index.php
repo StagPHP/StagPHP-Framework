@@ -2,7 +2,7 @@
 /**
  * Name:            Index PHP
  * Version:         1.0.4
- * Description:     All the traffic handled through here.
+ * Description:     All traffics are handled through here.
  *                  It doesn't do anything, but loads up
  *                  the application
  * 
