@@ -6,10 +6,6 @@
  * @package StagPHP
  */
 
-
-/** Include URL Fetcher to fetch URLs */
-stag_attach_controller('/jdb/JDB.php', 'library');
-
 function save_su_credentials($su_username, $su_email, $su_password){
   /** File Operator Object */
   $file_worker = new stag_file_manager('/');
@@ -25,18 +21,11 @@ function save_su_credentials($su_username, $su_email, $su_password){
   // Set Table Name
   $table_name = 'SU';
 
+  // Delete Table
+  $su_db->delete_table($table_name);
+
   // Create Table
   $su_db->add_table($table_name);
-
-  // get all super user data
-  $sus = $su_db->get_table($table_name);
-
-  foreach((array)$sus as $key => $su_data){
-    if($su_username == $su_data['su_username']) return [
-      'status' => false,
-      'description' => 'User Already Exists'
-    ];
-  }
 
   // New User
   $new_user = array(
@@ -95,6 +84,9 @@ if(verify_form_token($form, $form_action)):
   else array_push($form_error, 'Superuser Password: '.$valid[1]);
 
   if($su_username && $su_password){
+    stag_session_cache::add('user_credential', 'name', $su_username);
+    stag_session_cache::add('user_credential', 'email', $su_email);
+
     // $su_config = cyz_setup_su_config($su_username, $su_password);
     $su_saved = save_su_credentials($su_username, $su_email, $su_password);
 

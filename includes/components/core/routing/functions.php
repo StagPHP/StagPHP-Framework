@@ -1,192 +1,98 @@
 <?php
 /**
- * Name:            StagPHP Route Functions
- * Description:     This file contains functions related to routing
+ * Name:            StagPHP Routing Function
+ * Description:     This file contains functions related
+ *                  to the routing standards
  * 
  * @package:        StagPHP Core File
  */
 
-/** Get Rewrite base */
-function stag_get_rewrite_base(){
-    /** Current Directory URI
-     *  Convert Directory URI to Directory URL */
-    $full_root = str_replace('\\', '/', realpath(__DIR__));
-  
-    /** Get Document URL */
-    $doc_root = rtrim($_SERVER['DOCUMENT_ROOT'].'/', '/').'/';
-  
-    /** Removing Document Root from Directory URL */
-    $string_array = explode($doc_root, $full_root)[1];
-  
-    /** Creating array of path elements present in Directory URL
-     *  Reversing the created path array */
-    $path_array = array_reverse(explode('/', $string_array));
-  
-    /** Removing last three elements of array
-     *  Re-Reversing the array to original state */
-    $path_array = array_reverse(array_slice($path_array, 4));
-  
-    /** Creating Rewrite base variable starting with forward slash '/' */
-    $rewrite_base = '/';
-  
-    /** looping through the array and creating final rewrite base */
-    foreach($path_array as $slug) if($slug) $rewrite_base = $rewrite_base.$slug.'/';
-  
-    /** Return the final rewrite base */
-    return $rewrite_base;
+/** Direct route */
+function stag_define_direct_route($defined_slug, $instance){
+  /** Global variable */
+  GLOBAL $IS_404; GLOBAL $IS_500; GLOBAL $ROUTE_COMPLETED;
+
+  /** If route is not completed */
+  if (isset($ROUTE_COMPLETED) || !empty($ROUTE_COMPLETED)) return;
+
+  $IS_404 = TRUE;
+
+  /** Current slug variable */
+  $current_slug = get_current_slug();
+
+  if (ADMIN_PANEL) {
+    if (file_exists(STAG_ADMIN_DIR.$instance))
+    $view_instance = STAG_ADMIN_DIR . $instance;
+  }
+  else {
+    if (file_exists(STAG_APP_DIR.$instance))
+    $view_instance = STAG_APP_DIR.$instance;
+  }
+
+  if ($defined_slug != $current_slug) {
+    $IS_404 = TRUE;
+
+    return;
+  }
+
+  if (!isset($view_instance)) $IS_500 = TRUE;
+
+  $IS_404 = FALSE;
+
+  $ROUTE_COMPLETED = TRUE;
+
+  ob_clean();
+
+  @require_once($view_instance);
 }
 
-/** StagPHP Re-Structure and Rewrite URL
- * 
- * This function contains URL Rewrite logic 
- *      -> Removes extra forward slash
- *      -> Add Missing Forward Slash
- *      -> Phrase URL */
-function stag_structure_url(){
-    /** Get The Domain */
-    $domain = (isset($_SERVER['HTTPS']) ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'];
-    
-    /** Define Global Variable Current Domain */
-    if(!defined('CURRENT_DOMAIN')) define('CURRENT_DOMAIN', $domain);
-    
-    /** Get the URL path without query */
-    $request_uri = strtok($_SERVER['REQUEST_URI'], '?');
-    
-    /** Define Global Variable Request URI */
-    if(!defined('REQUEST_URI')) define('REQUEST_URI', $request_uri);
-    
-    /** Get Query Parameter if any */
-    $query = parse_url($domain . $_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-    
-    /** Regex Expression
-     * Pattern for repeating forward slash */
-    $pattern = '/(\/{2,})/';
-    
-    /** Check if there is no forward slash at the end
-     * or hash or repeating forward slashes */
-    if (substr($request_uri, -1) !== '/' || preg_match($pattern, $request_uri)) {
-        /** Right Trim from forward slash and add 
-         * forward slash */
-        $request_url = rtrim($request_uri . '/', '/') . '/';
-        
-        /** Remove forward slash repetition in between
-         * the request URL String */
-        $request_url = preg_replace($pattern, '/', $request_url);
-        
-        /** Create final URL */
-        $full_url = $domain . $request_url;
-        
-        /** Add Query String */
-        if ($query) $full_url .= '?' . $query;
-        
-        /** Get the query string separately and redirect to new URL */
-        header("Location: " . $full_url);
-        exit;
-    }
-}
+/** Global route */
+function stag_define_global_route($defined_slug, $instance){
+  /** Global variable */
+  GLOBAL $IS_404; GLOBAL $IS_500; GLOBAL $BASE_URL; GLOBAL $ROUTE_COMPLETED;
 
-/** StagPHP Create Index/Home URL
- * 
- * This function creates index/home URL for StagPHP
- *      -> Create Index URL as per directory structure */
-function stag_create_index_url(){
-    /** 
-     * Setting Index
-     * 
-     * Run this IF Statement - If Index is not set or
-     * not defined */
-    if (!defined('STAG_INDEX')) {
-        
-        /** Defining local Index variable */
-        $index = '';
-        
-        /** Get directory of this executing file */
-        $dir = __DIR__;
-        
-        /** Get Current directory and change backward slash 
-         * to forward slash */
-        $dir_uri = str_replace('\\', '/', realpath($dir));
-        
-        /** Get the current domain from global current
-         * domain Variable */
-        $domain = CURRENT_DOMAIN;
-        
-        /** Get currently executing directory */
-        $doc_root = rtrim($_SERVER['DOCUMENT_ROOT'] . '/', '/') . '/';
-        
-        /** Combine domain with document root
-         * to create absolute path
-         * 
-         * Execution: substr('.../dir/cyz-inc/comp/routing', (strlen(.../dir/) - 1));
-         * Result:    https://stagphp.dev/cyz-inc/comp/routing */
-        $domain .= substr($dir_uri, (strlen($doc_root) - 1));
-        
-        /** Removing extra sub directories */
-        $path_array = array_reverse(explode('/', $domain));
-        $path_array = array_reverse(array_slice($path_array, 4));
-        
-        /** Creating final Index */
-        foreach ($path_array as $slug) $index .= $slug . '/';
-        
-        /** Removing trailing forward slash */
-        $index = rtrim($index, '/');
-        
-        /** Define Index */
-        define('STAG_INDEX', $index);
-    }
-}
+  /** If route is not completed */
+  if (isset($ROUTE_COMPLETED) || !empty($ROUTE_COMPLETED)) return;
 
-/** StagPHP Redirect Junction
- * 
- * This function separates URL of
- * the superuser panel and actual application */
-function stag_route_junction(){
-    /** Get Slug Array From Request URI */
-    $slug_array_raw = explode('/', get_current_slug());
+  $IS_404 = TRUE;
 
-    /** Create Blank Slug Array */
-    $slug_array = array();
+  /** Current slug variable */
+  $current_slug = get_current_slug();
 
-    /** Recreate Slug Array using For Loop */
-    foreach($slug_array_raw as $val){
-        if($val) array_push($slug_array, $val);
-    }
+  if (ADMIN_PANEL) {
+    if (file_exists(STAG_ADMIN_DIR.$instance)) $view_instance = STAG_ADMIN_DIR.$instance;
+  }
+  else {
+    if (file_exists(STAG_APP_DIR.$instance)) $view_instance = STAG_APP_DIR.$instance;
+  }
 
-    /** Define Slug Array */
-    if(!defined('SLUG_ARRAY')) define('SLUG_ARRAY', $slug_array);
+  $current_slug_array = SLUG_ARRAY;
 
-    /** Load StagPHP Application */
-    if(empty($slug_array[0]) || ADMIN_PANEL_SLUG != $slug_array[0]) {
-        GLOBAL $APP_VIEW_LOADED; $APP_VIEW_LOADED = TRUE;
+  $defined_slug_array = array_values(array_filter(explode('/', $defined_slug)));
 
-        /** Check if StagAPP folder is created 
-         * than load application */
-        if(file_exists(STAG_APP_DIR)) require_once(STAG_COMPONENTS_DIR.'/boot/load-app.php');
+  /** process and validate */
+  for ($i = 0; $i < count($defined_slug_array); $i++) {
+    if ($defined_slug_array[$i] != $current_slug_array[$i]) return;
+  }
 
-        /** if StagAPP folder is created show No App Page */
-        else if(empty($slug_array[0])) {
-            require_once(STAG_ADMIN_VIEWS_DIR.'/utils/no-app.php');
-            GLOBAL $APP_404;
-            $APP_404 = FALSE;
-        }
-    }
+  if (!isset($view_instance)) $IS_500 = TRUE;
 
-    /** Load StagPHP Superuser Panel */
-    else if(ADMIN_PANEL_SLUG == $slug_array[0]) require_once(STAG_COMPONENTS_DIR.'/boot/load-admin-panel.php');
+  $BASE_URL = $defined_slug;
+
+  $IS_404 = FALSE;
+
+  ob_clean();
+
+  @require_once($view_instance);
 }
 
 /** URL redirection function */
-function stag_add_redirect($old_slug, $new_slug){
-    $current_slug = get_current_slug();
-    
-    GLOBAL $APP_404;
-    
-    if ($APP_404 && $old_slug == $current_slug) {
-        header("HTTP/1.1 301 Moved Permanently");
-        header("Location: " . $new_slug);
-        
-        $APP_404 = false;
-        
-        exit();
-    }
+function stag_define_redirect($old_slug, $new_slug){
+  $current_slug = get_current_slug();
+  
+  if ($old_slug == $current_slug) {
+    header("HTTP/1.1 301 Moved Permanently");
+    header("Location: " . $new_slug);
+    exit();
+  }
 }

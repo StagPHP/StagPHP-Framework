@@ -1,10 +1,10 @@
 <?php
 
 /** Integrate Application With StagPHP */
-stag_attach_controller('/core/integration/app/view/functions.php', 'components');
+stag_include_controller('/core/integration/app/view/functions.php', 'components');
 
 /** Include Watcher and Compiler Scripts */
-stag_attach_controller('/core/integration/app/functions.php', 'components');
+stag_include_controller('/core/integration/app/functions.php', 'components');
 
 /** Check if StagPHP DB is configured */
 if(file_exists(STAG_APP_DIR.'/controllers/integrate.defs.php')){

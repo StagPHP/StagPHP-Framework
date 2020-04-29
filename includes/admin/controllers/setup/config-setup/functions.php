@@ -144,6 +144,44 @@ class config_creator{
         }
     }
 
+    /** Stag default email config */
+    function setup_email_config($data){
+      if(isset($data['sender-name'])){
+        /** Comments */
+        $this->content_string .= "\r\n/**\r\n".
+        " * StagPHP Mail Configuration (SMC)\r\n".
+        " *\r\n".
+        " * You can change email settings here\r\n".
+        " * changes will be reflected immediately\r\n".
+        " *\r\n".
+        " * Sender name (or) from name.*/\r\n";
+
+        /** Config Settings */
+        $this->content_string .= "define('SMC_FROM_NAME', '".$data['sender-name']."');\r\n";
+      }
+
+      else if(isset($data['sender-email'])){
+        /** Comment */
+        $this->content_string .= "/** Sender email (or) from email. */\r\n";
+        /** Database Username */
+        $this->content_string .= "define('SMC_FROM_EMAIL', '".$data['sender-email']."');\r\n";
+      }
+
+      else if(isset($data['reply-to-name'])){
+        /** Comment */
+        $this->content_string .= "/** Reply to name. */\r\n";
+        /** Database Username */
+        $this->content_string .= "define('SMC_REPLY_TO_NAME', '".$data['reply-to-name']."');\r\n";
+      }
+
+      else if(isset($data['reply-to-email'])){
+        /** Comment */
+        $this->content_string .= "/** Reply to email. */\r\n";
+        /** Database Username */
+        $this->content_string .= "define('SMC_REPLY_TO_EMAIL', '".$data['reply-to-email']."');\r\n";
+      }
+    }
+
     function compile_config(){
         if(!isset($_SESSION['stag_installation_memory']) || empty($_SESSION['stag_installation_memory']))
         return FALSE;
@@ -153,14 +191,21 @@ class config_creator{
         $this->get_stag_config_start();
 
         if(is_array($config_data)) foreach($config_data as $data_set => $data_set_value){
-            if('su_config' == $data_set)  foreach($data_set_value as $key => $value)
+            if('su_config' == $data_set)
+            foreach($data_set_value as $key => $value)
             $this->get_su_config($value);
             
-            if('mysql_db_details' == $data_set) foreach($data_set_value as $key => $value)
+            if('mysql_db_details' == $data_set)
+            foreach($data_set_value as $key => $value)
             $this->get_mysql_config($value);
 
-            if('stagphp_config' == $data_set) foreach($data_set_value as $key => $value)
+            if('stagphp_config' == $data_set)
+            foreach($data_set_value as $key => $value)
             $this->get_stag_config($value);
+
+            if('email_settings' == $data_set)
+            foreach($data_set_value as $key => $value)
+            $this->setup_email_config($value);
         }
 
         return $this->content_string;

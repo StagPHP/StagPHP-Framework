@@ -11,19 +11,23 @@ function start_loading(){
   $('.lv-loading').css('display', '');
 }
 
-function show_error(){
+function show_error(extra = null){
   $('.lv-lists.error').css('display', '');
 }
 
-function show_no_result(){
+function show_no_result(extra = null){
   $('.lv-lists.no-result').css('display', '');
 }
 
-function show_view(){
-  $('.lv-head, #lv-list').css('display', '');
+function show_view(extra = null){
+  $('.instance-list, #lv-list').css('display', '');
+  $('#item-count').html(extra);
+  if(extra > 1){
+    $('#item-Instance').html('Instances');
+  }
 }
 
-function loaded(function_name){
+function loaded(function_name, extra){
   js_click();
 
   end_time = get_time();
@@ -36,30 +40,30 @@ function loaded(function_name){
 
   setTimeout(() => {
     $('.lv-loading').css('display', 'none');
-    function_name();
+    function_name(extra);
   }, delay);
 }
 
 function create_view_list(response){
   if(response.length) {
-    $('#lv-list').html('')
-    $('#lv-list').html(function(){
-      $html = '<table>';
-
+    $('.instance-list tbody').html(function(){
+      $html = '';
+    
       response.forEach(element => {
-        $html = $html + '<tr><td class="py-2 px-3"><input type="checkbox"/></td>';
-        $html = $html + '<td data-href="' + app_view_editor + '?view=' + name + '&id=' + element['id'] + '"';
-        $html = $html + 'class="p-3">' + element['instance_name'] + '</td>';
+        $html = $html + '<tr><td ';
+        $html = $html + 'class="p-3"><div class="md-checkbox"><input id="' + element['id'] + '" type="checkbox"><label for="' + element['id'] + '">' + element['instance_name'] + '</label></div></td>';
         $html = $html + '<td class="p-3">' + element['date_updated'] + '</td></tr>';
       });
 
-      return $html + '</table>';
+      // data-href="' + app_view_editor + '?view=' + name + '&id=' + element['id'] + '"
+
+      return $html;
     });
 
-    loaded(show_view);
+    loaded(show_view, response.length);
   }
   
-  else loaded(show_no_result);
+  else loaded(show_no_result, null);
 }
 
 function get_views(){
@@ -79,11 +83,11 @@ function get_views(){
 
     if(data['status']) create_view_list(data['result']['view-list']);
 
-    else loaded(show_error);
+    else loaded(show_error, null);
 
   }).fail(function() {
 
-    loaded(show_error);
+    loaded(show_error, null);
 
   });
 }
@@ -106,11 +110,11 @@ function refresh_view(){
   
       if(data['status']) get_views();
 
-      else loaded(show_error);
+      else loaded(show_error, null);
       
     }).fail(function() {
   
-      loaded(show_error);
+      loaded(show_error, null);
   
     });
   });

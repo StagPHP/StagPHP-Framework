@@ -1,8 +1,7 @@
 <?php
 
-
 /** Include database script to make DB connection */
-stag_attach_controller('/mySQL/base.php', 'library');
+stag_include_controller('/mySQL/base.php', 'library');
 
 /** Form Name - Used to identify form*/
 $form = 'db_setup_form';
@@ -47,7 +46,6 @@ if(verify_form_token($form, $form_action)):
   if($valid[0]) $tb_prefix = $_POST['tb-prefix'];
   /** If not valid then push the error to form error */
   else array_push($form_error, 'Database Name: '.$valid[1]);
-
 
   /** If all the fields are defined then defined the variables
    *  globally.

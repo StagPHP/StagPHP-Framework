@@ -1,126 +1,164 @@
 <?php
-/**
- * StagPHP SMTP: Standalone SMTP Plugin For PHP Applications
- * 
- * Base Configuration file
- *
- * @link https://stagphp.dev
- * @package StagPHP_plugin
- */
 
-/** If you are not using composer - than comment this out */
-// namespace smtp;
-
-
-class cyz_smtp{
+class stag_smtp{
   private $from_name;
   private $from_email;
-  private $template_dir;
-  private $method;
-  private $api;
+  private $reply_to_name;
+  private $reply_to_email;
+  private $boundary;
+  private $attachment_mime_type;
+  private $headers;
+  private $body;
 
-  function __construct($from_name, $from_email, $template_dir = null, $method = null, $api = null){
-    /** If Directory location is not provided */
-    if(empty($template_dir)) $template_dir = __DIR__.'/email-templates';
+  function __construct($data){
+    $this->from_name      = SMC_FROM_NAME;
+    $this->from_email     = SMC_FROM_EMAIL;
+    $this->reply_to_name  = SMC_REPLY_TO_NAME;
+    $this->reply_to_email = SMC_REPLY_TO_EMAIL;
 
-    /** 
-     * Removing trailing forward slash - if it
-     * has any */
-    if(substr($template_dir, -1) == '/') $template_dir = rtrim($template_dir, '/');
-    
-    /** Remove any file with directory name */     
-    if(file_exists($template_dir)) @unlink($template_dir);
-    
-    /** Create Directory if does not exists */
-    if(!is_dir($template_dir)) @mkdir($template_dir);
-
-    /** Define JDB Directory Location */
-    $this->template_dir = $template_dir;
-
-    /** If from name is empty */
-    if(empty($from_name)) $this->from_name = "test";
-    $this->from_name = $from_name;
-
-    /**   If from email is empty */
-    if(empty($from_email)) $this->from_email = "test@webenfolds.com";
-    $this->from_email = $from_email;
-
-    if(strcasecmp('SendGrid', $method) == 0) $this->method = 'SendGrid';
-    else $this->method = 'php';
-
-    $this->api = $api;
+    // Md5 hashed value of a random number
+    $this->boundary = md5(rand(1111111111,9999999999));
   }
 
+  function send_mail($data){
+    $to = $data['to'];
+    $subject = $data['subject'];
+    $is_html_email = $data['html-email'];
 
+    if($is_html_email){
+      $is_html_email = TRUE;
+      $message_body = compose_html_email(
+        $data['template-loc'],
+        $data['template-data']
+      );
+    } else {
+      $is_html_email =  FALSE;
+      $message_body = $data['email-body'];
+    }
 
-  private function get_sg_opt_data($to, $subject, $template_text){
-    return '{"personalizations":[{
-      "to":[{
-        "email":'.json_encode($to).'
-      }]}],
-      "from":{
-         "email":'.json_encode($this->from_email).',
-         "name":'.json_encode($this->from_name).'
-      },
-      "subject":'.json_encode($subject).',
-      "content":[
-      {
-        "type":"text/html",
-        "value":'.json_encode($template_text).'
+    if(isset($data['attachment-field-name'])) $attachment_type = 'uploaded-file';
+    else $attachment_type = 'none';
+
+    $this->compose_email_head();
+
+    $this->compose_email_body($is_html_email, $message_body);
+
+    if('uploaded-file' == $attachment_type){
+      $mime_type = 'any';
+
+      if(isset($data['attachment-type']))
+      $mime_type = $data['attachment-type'];
+
+      $this->attach_attachment($attachment_field_name, $mime_type);
+    }     
+
+    return $this->send_mail_using_php($to, $subject);
+  }
+
+  private function compose_email_head(){
+    $this->headers = "MIME-Version: 1.0\r\n";
+    $this->headers .= "From: ".$this->from_name." <".$this->from_email.">\r\n";
+    $this->headers .= "Reply-To: ".$this->reply_to_name." <".$this->reply_to_email.">\r\n";
+    $this->headers .= "Content-Type: multipart/mixed; boundary = ".$this->boundary."\r\n";
+    $this->headers .= "X-Mailer: PHP/".phpversion();
+  }
+
+  private function compose_email_body($is_html_email, $message_body){
+    if($is_html_email) $type = 'text/html';
+    else $type = 'text/plain';
+
+    $this->body = "--".$this->boundary."\r\n"; 
+    $this->body .= "Content-Type: ".$type."; charset=ISO-8859-1\r\n"; 
+    $this->body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
+    $this->body .= chunk_split(base64_encode($message_body));
+    $this->body .= "--".$this->boundary."\r\n"; 
+  }
+
+  private function attach_attachment($field_name, $mime_type){
+    $result = $this->get_attachment_content($field_name, $mime_type);
+
+    if($result['status']) {
+      $encoded_content = $result['content'];
+      $file_name = $result['file-name'];
+
+      $this->body .= "--".$this->boundary."\r\n"; 
+      $this->body .="Content-Type: ".$this->attachment_mime_type."; name=".$file_name."\r\n"; 
+      $this->body .="Content-Disposition: attachment; filename=".$file_name."\r\n"; 
+      $this->body .="Content-Transfer-Encoding: base64\r\n"; 
+      $this->body .="X-Attachment-Id: ".rand(1000, 99999)."\r\n\r\n";  
+      $this->body .= $encoded_content;
+      $this->body .= "--".$this->boundary."\r\n";
+    }
+    else var_dump($result);
+  }
+
+  private function get_attachment_content($field_name, $mime_type){
+    //Get uploaded file data using $_FILES array 
+    $tmp_name = $_FILES[$field_name]['tmp_name'];   // get the temporary file name of the file on the server 
+    $name	    = $_FILES[$field_name]['name'];       // get the name of the file 
+    $size	    = $_FILES[$field_name]['size'];       // get size of the file for size validation 
+    $type	    = $_FILES[$field_name]['type'];       // get type of the file 
+    $upload_error	  = $_FILES[$field_name]['error'];      // get the error (if any)
+
+    if($upload_error === UPLOAD_ERR_OK){
+      $actual_mime_type = $this->get_uploaded_attachment_mime($tmp_name);
+
+      if($mime_type == $actual_mime_type || 'any' == $mime_type){
+        $handle = @fopen($tmp_name, "r");
+        $content = @fread($handle, $size);
+        @fclose($handle);
+
+        return array(
+          'status'    => TRUE,
+          'file-name' => $name,
+          'content'   => chunk_split(base64_encode($content))
+        );
       }
-    ]}';
+
+      return array(
+        'status'      => FALSE,
+        'Description' => 'Mime Type Not Correct!'
+      );
+    }
+
+    return array(
+      'status'      => FALSE,
+      'Description' => 'Upload failed!'
+    );
   }
 
+  private function get_uploaded_attachment_mime($temp_uploaded_file){
+    if (function_exists('finfo_open')) {
+    /** Getting correct $_FILES mime value using finfo function */
+      $finfo = finfo_open(FILEINFO_MIME_TYPE);
 
+      /** Getting file Info */
+      $this->attachment_mime_type = finfo_file($finfo, $temp_uploaded_file);
 
-  private function send_email_using_sg($email_data){
-    // Send Grid CURL Request URL
-    $api_request_url = 'https://api.sendgrid.com/v3/mail/send';
+      /** Close File Info */
+      finfo_close($finfo);
+    }
+    
+    /** Set MIME type */
+    else $this->attachment_mime_type = mime_content_type($temp_uploaded_file);
+    
 
-    // Curl Request Initialization
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $api_request_url);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $email_data);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-      'Content-Type: application/json',
-      'Content-Length: '        . strlen($email_data),
-      'Authorization: Bearer '  .$this->api
-    ));
-    $response     = curl_exec($ch);
-    $status_code  = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
-    curl_close ($ch);
+    /** Get file type and extension array */
+    $file_type_array = explode('/', $this->attachment_mime_type);
 
-    if(201 != $status_code) return false;
-    else return true;
+    /** Return MIME type category */
+    return $file_type_array[0];
   }
 
-  
-
-  function send_email($to, $subject, $data_set, $template_name){
-    if(empty($to) && empty($subject)) return false;
-
-    // Get Template
-    $template_text = file_get_contents($this->template_dir.'/'.$template_name);
+  private function compose_html_email($html_template_loc, $data_set){
+    /** Get Template Content */
+    $html_template_content = file_get_contents($html_template_loc);
 
     /** Get Content Variable And Substitute */
-    foreach($data_set as $key => $value){
-      $template_text = preg_replace("/((\{\{)".$key."(\}\}))/m", $value, $template_text);
-    }
+    foreach($data_set as $key => $value)
+    $html_template_content = preg_replace("/((\{\{)".$key."(\}\}))/m", $value, $template_text);
 
-    if('SendGrid' == $this->method){
-      if(empty($this->api)) return false;
-
-      $email_data = $this->get_sg_opt_data($to, $subject, $template_text);
-
-      $this->send_email_using_sg($email_data);
-    }
-
-    else {
-      $headers = "From: $this->from_email $this->from_name" . "\r\n" .
-
-      mail($to, $subject, $template_text);
-    }
+    // Return HTML template Content
+    return chunk_split(base64_encode($html_template_content));
   }
 }

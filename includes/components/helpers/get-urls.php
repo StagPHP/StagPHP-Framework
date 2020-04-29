@@ -61,23 +61,23 @@ function get_admin_panel_url(){
  *    -> URL as a String
  *    -> FALSE - Incase HOME_URL is not set*/
 function get_assets_dir_uri($folder_name = null, $is_backend = FALSE){
-    if($is_backend) {
-        if(defined('STAG_INDEX'))
-        return STAG_INDEX.'/includes/admin/assets';
+  if($is_backend) {
+    if(defined('STAG_INDEX'))
+    return STAG_INDEX.'/includes/admin/assets';
 
-        /** Return FALSE if Stag index is not defined */
-        return FALSE;
-    }
-    else {
-            /** 
-         * If folder name is set - return assets dir URL
-         * which is inside that folder. */
-        if (!empty($folder_name) && is_dir(STAG_APP_DIR.'/'.$folder_name))
-        return get_home_url().'/stag-app'.$folder_name;
+    /** Return FALSE if Stag index is not defined */
+    return FALSE;
+  }
+  else {
+    /** 
+     * If folder name is set - return assets dir URL
+     * which is inside that folder. */
+    if (!empty($folder_name) && is_dir(STAG_APP_DIR.'/'.$folder_name))
+    return get_home_url().'/stag-app'.$folder_name;
 
-        /** 
-         * If folder name is not set - return default assets
-         * dir URL. */
-        return get_home_url() . '/stag-app/assets';
-    }
+    /** 
+     * If folder name is not set - return default assets
+     * dir URL. */
+    return get_home_url() . '/stag-app/assets';
+  }
 }

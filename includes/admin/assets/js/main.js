@@ -98,7 +98,7 @@ function disable_sn_dd(element){
     var sub_m = '#sub-menu-' + $(this).data('submenu-id');
 
     if($(sub_m + ' > a').length == 0){
-      $(this).addClass('disabled')
+      $(this).remove();
     }
   });
 }

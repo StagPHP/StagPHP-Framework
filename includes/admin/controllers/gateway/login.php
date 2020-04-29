@@ -1,16 +1,19 @@
 <?php
 
+/** Integrate Navigation With StagPHP */
+stag_include_controller('/enqueue.php', 'admin');
+
 /** Include form fields */
-stag_attach_controller('/form/main.php', 'library');
+stag_include_controller('/form/main.php', 'library');
 
 /** Include session token */
-stag_attach_controller('/security/main.php', 'library');
+stag_include_controller('/security/main.php', 'library');
 
 /** Include validator to validate input */
-stag_attach_controller('/validator/input.php', 'library');
+stag_include_controller('/validator/input.php', 'library');
 
 /** Include validator to validate character set */
-stag_attach_controller('/validator/character.php', 'library');
+stag_include_controller('/validator/character.php', 'library');
 
 
 // Create new user session object

@@ -7,8 +7,11 @@ function cyz_input_validate($type, $input){
 
   /** Check if the input characters are valid utf8 characters */
   if(cyz_check_valid_utf8($input)){
+    $email_expression = "/([a-z0-9\%\+\.\-\+\_]*\@[a-z0-9.-]*\.[a-z]{2,})/";
+    $slug_expression = "/([A-Z0-9a-z\-\_\.\~])/";
+    $name_expression = "/(^[A-Za-z0-9 ]*)/";
+
     $username = "/(^(^[^\w]|[\_\-])|[^\w])/";
-    $email = "/([a-z0-9\%\+\.\-\+\_]*\@[a-z0-9.-]*\.[a-z]{2,})/";
     $db_name = "/(^(^[^\w]|[\_\-])|[^\w\-\$\#])/";
     $phone_number = "/[^\d]/";
 
@@ -17,9 +20,21 @@ function cyz_input_validate($type, $input){
       if(floatval($input) == $input) return [true, 'Field is valid'];
     }
 
-    /** Validate Username */
+    /** Validate Email */
     else if($type == 'email'){
-      $formatted = preg_replace($email, "", $input);
+      $formatted = preg_replace($email_expression, "", $input);
+      if(empty($formatted)) return [true, 'Field is valid'];
+    }
+
+    /** Validate Slug */
+    else if($type == 'slug' || $type == 'directory'){
+      $formatted = preg_replace($slug_expression, "", $input);
+      if(empty($formatted)) return [true, 'Field is valid'];
+    }
+
+    /** Validate Name */
+    else if($type == 'name'){
+      $formatted = preg_replace($name_expression, "", $input);
       if(empty($formatted)) return [true, 'Field is valid'];
     }
 

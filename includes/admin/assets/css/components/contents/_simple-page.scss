@@ -1,0 +1,47 @@
+.simple-heading{
+  line-height: 50px;
+}
+
+.simple-nav ul, .simple-nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.simple-nav li a {
+  display: block;
+  color: #00ACC1;
+  text-decoration: none;
+  margin: 0 0 20px;
+
+  .stag-icon{
+    display: none;
+  }
+}
+
+.simple-nav li a.active {
+  font-weight: bold;
+
+  .stag-icon{
+    display: inline;
+  }
+}
+
+.header-text-with-menu{
+  input{
+    box-shadow: none !important;
+    border: 0 !important;
+    outline: none !important;
+    padding: 0;
+    line-height: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    background-color: transparent !important;
+  }
+  .btn-outline-secondary{
+    border: 0;
+    box-shadow: none;
+    border-radius: 4px !important;
+  }
+}

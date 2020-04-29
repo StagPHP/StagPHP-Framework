@@ -1,0 +1,96 @@
+.install-form-base {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2%;
+
+  .letter-head {
+    position: relative;
+    background-color: #F7F7F7;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+
+    h1{
+      font-weight: bold;
+      margin: 50px 0 20px;
+    }
+  }
+
+  .letter-head:before, .letter-head:after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 50px;
+    left: -10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .letter-head:before {
+    top: -50px;
+  }
+
+  .letter-head:after {
+    bottom: -50px;
+  }
+
+  >div {
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.18), -2px 2px 8px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+  }
+
+  .cyz-fb-head {
+    padding: 80px 10px 70px;
+    background-color: #fff;
+
+    >div {
+      max-width: 620px;
+      padding: 0 10px;
+      margin: 0 auto;
+    }
+  }
+
+  .cyz-fb-title {
+    .title-block {
+      padding: 10px;
+    }
+
+    p {
+      text-align: center;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+  }
+
+  .cyz-fb-body {
+    background-color: #fff;
+
+    p {
+      text-align: justify;
+      margin: 10px auto;
+
+      >.btn {
+        margin: 30px 0 0;
+      }
+    }
+
+    .cyz-fb-sep {
+      margin: 60px 0;
+    }
+
+    >div {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form label {
+      font-weight: 700;
+      color: #555;
+    }
+  }
+
+  .cyz-fb-footer {
+    background-color: #f7f7f7;
+    border-top: 1px solid #e4e4e4;
+  }
+}

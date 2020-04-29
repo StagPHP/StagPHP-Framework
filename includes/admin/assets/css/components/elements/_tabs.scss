@@ -1,0 +1,27 @@
+.tabbed{
+  .header{
+    border-bottom: 0;
+  }
+
+  .header-tabs{
+    position: relative;
+    height: auto;
+    overflow: auto;
+    border-bottom: 1px solid #e7e7e7;
+
+    >a{
+      float: left;
+      padding: 10px 20px;
+    }
+  }
+}
+
+.tabbed-body{
+  >div{
+    display: none;
+    opacity: 0;
+  }
+  >div.active{
+    display: block;
+  }
+}

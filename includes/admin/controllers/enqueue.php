@@ -26,9 +26,9 @@ enqueue_css_backend(array(
 ));
 enqueue_css_backend(array(
     'name'          => 'google-fonts',
-    'relative_url'  => '/fonts/google-fonts.css',
+    'absolute_url'  => 'https://fonts.googleapis.com/css?family=Exo:400,500,700,700i&display=swap',
     'version'       => '1.0.1',
-    'priority'       => 'low'
+    'priority'      => 'low'
 ));
 enqueue_css_backend(array(
     'name'          => 'stag-icons',
@@ -45,6 +45,11 @@ enqueue_js_backend(array(
     'relative_url'  => '/js/components/jquery.min.js',
     'version'       => '1.0.1'
     // 'async'         => FALSE
+));
+enqueue_js_backend(array(
+  'name'          => 'popper-js',
+  'relative_url'  => '/vendor/bootstrap/js/popper.min.js',
+  'version'       => '1.0.1'
 ));
 enqueue_js_backend(array(
     'name'          => 'bootstrap',

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'StagPHP';
-  src:  url('fonts/StagPHP.eot?jv9zhh');
-  src:  url('fonts/StagPHP.eot?jv9zhh#iefix') format('embedded-opentype'),
-    url('fonts/StagPHP.ttf?jv9zhh') format('truetype'),
-    url('fonts/StagPHP.woff?jv9zhh') format('woff'),
-    url('fonts/StagPHP.svg?jv9zhh#StagPHP') format('svg');
+  src:  url('fonts/StagPHP.eot?pp761z');
+  src:  url('fonts/StagPHP.eot?pp761z#iefix') format('embedded-opentype'),
+    url('fonts/StagPHP.ttf?pp761z') format('truetype'),
+    url('fonts/StagPHP.woff?pp761z') format('woff'),
+    url('fonts/StagPHP.svg?pp761z#StagPHP') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,9 +25,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.stag-icon-application:before {
-  content: "\e904";
-}
 .stag-icon-account-box:before {
   content: "\e906";
 }
@@ -48,6 +45,9 @@
 }
 .stag-icon-alert:before {
   content: "\e93f";
+}
+.stag-icon-application:before {
+  content: "\e904";
 }
 .stag-icon-archive:before {
   content: "\e93a";
@@ -75,6 +75,9 @@
 }
 .stag-icon-backspace:before {
   content: "\e935";
+}
+.stag-icon-blazing-fast:before {
+  content: "\e915";
 }
 .stag-icon-box:before {
   content: "\e940";
@@ -133,6 +136,9 @@
 .stag-icon-day-night-auto-mode:before {
   content: "\e91f";
 }
+.stag-icon-discord:before {
+  content: "\e97a";
+}
 .stag-icon-discussion:before {
   content: "\e931";
 }
@@ -144,6 +150,9 @@
 }
 .stag-icon-download:before {
   content: "\e964";
+}
+.stag-icon-drawer:before {
+  content: "\e96b";
 }
 .stag-icon-email:before {
   content: "\e930";
@@ -157,11 +166,11 @@
 .stag-icon-expand-view:before {
   content: "\e91b";
 }
+.stag-icon-facebook:before {
+  content: "\e978";
+}
 .stag-icon-file:before {
   content: "\e91a";
-}
-.stag-icon-file1:before {
-  content: "\e915";
 }
 .stag-icon-file-archive-o:before {
   content: "\e90e";
@@ -219,6 +228,9 @@
 }
 .stag-icon-github:before {
   content: "\e90b";
+}
+.stag-icon-heart:before {
+  content: "\e976";
 }
 .stag-icon-help:before {
   content: "\e944";
@@ -316,6 +328,9 @@
 .stag-icon-product-bag:before {
   content: "\e905";
 }
+.stag-icon-racks:before {
+  content: "\e96a";
+}
 .stag-icon-refresh:before {
   content: "\e96d";
 }
@@ -352,6 +367,9 @@
 .stag-icon-ssl-enabled:before {
   content: "\e927";
 }
+.stag-icon-stagon:before {
+  content: "\e959";
+}
 .stag-icon-star:before {
   content: "\e926";
 }
@@ -373,11 +391,20 @@
 .stag-icon-trash:before {
   content: "\e91c";
 }
+.stag-icon-trophy:before {
+  content: "\e977";
+}
 .stag-icon-tune:before {
   content: "\e956";
 }
+.stag-icon-twitter:before {
+  content: "\e979";
+}
 .stag-icon-up:before {
   content: "\e960";
+}
+.stag-icon-update:before {
+  content: "\e97b";
 }
 .stag-icon-upload:before {
   content: "\e962";

@@ -48,9 +48,10 @@ class stag_session_cache{
 
         if(!isset($stag_installation_memory[$data_set])) return FALSE;
 
-        if(!isset($stag_installation_memory[$data_set][$data_key])) return FALSE;
+        foreach($stag_installation_memory[$data_set] as $value)
+        if(isset($value[$data_key])) return $value[$data_key];
 
-        return $stag_installation_memory[$data_set][$data_key];
+        return FALSE;
     }
 
     static function reset(){

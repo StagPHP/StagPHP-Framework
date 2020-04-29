@@ -6,11 +6,13 @@
  * @package:        StagPHP Core File
  */
 
+
 /**
  * StagPHP Framework Version Identifier
  * 
  * Purpose:   Defining the Global Variable storing STAG_VERSION */
-if(!defined('STAG_VERSION')) define('STAG_VERSION', '1.0.4');
+if(!defined('STAG_VERSION')) define('STAG_VERSION', '1.0.6');
+
 
 /** StagPHP APP Directory */
 if(!defined('STAG_APP_DIR'))
@@ -22,7 +24,7 @@ define('STAG_CACHE_DIR', ABSPATH.'/cache');
 
 /** StagPHP APP Directory */
 if(!defined('STAG_CONTAINER_DIR'))
-define('STAG_CONTAINER_DIR', ABSPATH.'/container/');
+define('STAG_CONTAINER_DIR', ABSPATH.'/container');
 
 /** StagPHP APP Directory */
 if(!defined('STAG_ADMIN_DIR'))

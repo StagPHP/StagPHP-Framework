@@ -3,13 +3,13 @@
 ignore_user_abort(true);
 
 /** API response template */
-stag_attach_controller('/functions/response-template.php', 'admin-api');
+stag_include_controller('/functions/response-template.php', 'admin-api');
 
 /** Secure internal api functions */
-stag_attach_controller('/functions/secure-request-internal.php', 'admin-api');
+stag_include_controller('/functions/secure-request-internal.php', 'admin-api');
 
 /** Core update management controllers */
-stag_attach_controller('/core/update-management/core/init.php', 'components');
+stag_include_controller('/core/update-management/core/init.php', 'components');
 
 /** Error response if action is not defined */
 if(empty($_POST['action'])) error_response(array(

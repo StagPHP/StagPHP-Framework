@@ -1,0 +1,14 @@
+<h1 style="margin: 50px 0 30px;">StagPHP OSSL</h1>
+<p><strong>StagPHP</strong> <strong>O</strong>pen <strong>S</strong>ource <strong>S</strong>oftware <strong>L</strong>icense agreement is based on <a href="https://stagphp.io/" target="_blank">GPL 3.0</a> GENERAL PUBLIC LICENSE Version 3, 29 June 2007.</p>
+
+<h2 style="margin: 50px 0 30px;">StagPHP Build</h2>
+<p>Currently StagPHP is in beta build and available only for testing. If you are a developer or a beta tester, you can test this framework and report any bugs you encounter, to our community. Our community will be thankful for your contribution.</p>
+
+<h2 style="margin: 50px 0 30px;">StagPHP Installation</h2>
+<p>StagPHP community recommends that this framework must be installed from the recently downloaded authentic package from the StagPHP website.</p>
+
+<h2 style="margin: 50px 0 30px;">StagPHP Security</h2>
+<p>StagPHP community recommends following the security steps while installing StagPHP. Also, enable automatic updates. Install verified StagONS only. StagPHP community will not take responsibilities of your actions. If have any security concern, let us know. As a developer, if you found any errors or vulnerability, we request to inform our community via discord or twitter or be a part of the development community and fix the vulnerability together.</p>
+
+<h2 style="margin: 50px 0 30px;">StagPHP Application</h2>
+<p>StagPHP community build comes without the actual application. If you are installing this framework with the actual application, then you must follow the instructions given to you by your software distributor or developer.</p>

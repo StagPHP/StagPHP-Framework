@@ -4,9 +4,12 @@ body{
   h3,
   h4,
   h5,
-  h6,
-  p{
+  h6 {
     color: #555;
+  }
+
+  p{
+    color: #666;
   }
 }
 
@@ -76,18 +79,6 @@ body.blue-shade {
   .sub-menu-item {
     background: rgba(0, 0, 0, 0.2);
   }
-
-  .dropdown-icon.expand {
-    background-color: rgba(0, 0, 0, 0.15);
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .menu.drop-down.opened {
-    .dropdown-icon.expand {
-      background-color: rgba(0, 0, 0, 0.4);
-      color: rgba(255, 255, 255, 0.9);
-    }
-  }
 }
 
 
@@ -146,5 +137,12 @@ body.blue-shade {
         text-decoration: none;
       }
     }
+  }
+}
+
+
+body.blue-shade {
+  .stag-icon-refresh{
+    background-color: #00ACC1;
   }
 }
