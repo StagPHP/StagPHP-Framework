@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'StagPHP';
-  src:  url('fonts/StagPHP.eot?pp761z');
-  src:  url('fonts/StagPHP.eot?pp761z#iefix') format('embedded-opentype'),
-    url('fonts/StagPHP.ttf?pp761z') format('truetype'),
-    url('fonts/StagPHP.woff?pp761z') format('woff'),
-    url('fonts/StagPHP.svg?pp761z#StagPHP') format('svg');
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?mxe455');
+  src:  url('fonts/icomoon.eot?mxe455#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?mxe455') format('truetype'),
+    url('fonts/icomoon.woff?mxe455') format('woff'),
+    url('fonts/icomoon.svg?mxe455#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 .stag-icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'StagPHP' !important;
+  font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -95,10 +95,10 @@
   content: "\e971";
 }
 .stag-icon-close:before {
-  content: "\e952";
-}
-.stag-icon-close1:before {
   content: "\e951";
+}
+.stag-icon-close-solid:before {
+  content: "\e952";
 }
 .stag-icon-cloud-download:before {
   content: "\e965";
@@ -175,13 +175,7 @@
 .stag-icon-file-archive-o:before {
   content: "\e90e";
 }
-.stag-icon-file-zip-o:before {
-  content: "\e90e";
-}
 .stag-icon-file-audio-o:before {
-  content: "\e90d";
-}
-.stag-icon-file-sound-o:before {
   content: "\e90d";
 }
 .stag-icon-file-excel-o:before {
@@ -190,16 +184,7 @@
 .stag-icon-file-image-o:before {
   content: "\e90f";
 }
-.stag-icon-file-photo-o:before {
-  content: "\e90f";
-}
-.stag-icon-file-picture-o:before {
-  content: "\e90f";
-}
 .stag-icon-file-movie-o:before {
-  content: "\e90c";
-}
-.stag-icon-file-video-o:before {
   content: "\e90c";
 }
 .stag-icon-file-pdf-o:before {
@@ -238,9 +223,6 @@
 .stag-icon-hidden:before {
   content: "\e94d";
 }
-.stag-icon-visibility-off:before {
-  content: "\e94d";
-}
 .stag-icon-hourglass:before {
   content: "\e96c";
 }
@@ -266,12 +248,6 @@
   content: "\e94c";
 }
 .stag-icon-live:before {
-  content: "\e909";
-}
-.stag-icon-launch:before {
-  content: "\e909";
-}
-.stag-icon-rocket:before {
   content: "\e909";
 }
 .stag-icon-loading:before {
@@ -412,16 +388,10 @@
 .stag-icon-verified:before {
   content: "\e94b";
 }
-.stag-icon-secure:before {
-  content: "\e94b";
-}
 .stag-icon-video:before {
   content: "\e918";
 }
 .stag-icon-visible:before {
-  content: "\e93c";
-}
-.stag-icon-visibility:before {
   content: "\e93c";
 }
 .stag-icon-warning:before {

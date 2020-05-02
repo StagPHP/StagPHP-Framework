@@ -1,0 +1,64 @@
+.zf-upload-block{
+  position: relative;
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 2px dashed #ccc;
+
+  >table{
+    width: 100%;
+    height: 100%;
+  }
+
+  td{
+    text-align: center;
+  }
+
+  #zu-form-title{
+    h2, .stag-icon{
+      display: inline-block;
+      line-height: 30px;
+    }
+    .stag-icon{
+      font-size: 24px;
+      cursor: pointer;
+      color: #28A745;
+    }
+    .stag-icon-error-solid{
+      color: #DC3545;
+    }
+    #zu-reset{
+      color: #888;
+    }
+    #zu-reset:hover,
+    #zu-reset:active,
+    #zu-reset:focus {
+      color: #DC3545;
+    }
+  }
+
+  [type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+  }
+
+  [type="file"] + label, button, .zf-button {
+    background: #00ACC1;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: inherit;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem 50px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+    text-decoration: none;
+    box-shadow: 3px 6px 24px rgba(0,0,0,0.16), -3px 6px 24px rgba(0,0,0,0.16);
+  }
+}

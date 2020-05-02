@@ -13,11 +13,14 @@ $instance_data = array(
   '/' => array(
     'instance' => '/admin-panel/dashboard.php'
   ),
+  '/deploy-app/' => array(
+    'instance' => '/admin-panel/application/deploy-app.php'
+  ),
   '/stagons/' => array(
     'instance' => '/admin-panel/stagons/all-stagons.php'
   ),
-  '/add-stagons/' => array(
-    'instance' => '/admin-panel/stagons/add-stagons.php'
+  '/add-stagon/' => array(
+    'instance' => '/admin-panel/stagons/add-stagon.php'
   ),
   '/all-users/' => array(
     'instance' => '/admin-panel/profile/all-users.php'

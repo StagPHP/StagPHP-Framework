@@ -54,6 +54,19 @@ Must be considered while developing StagPHP application, to avoid conflicts.
 
 ## Update Log
 
+### V 1.0.5 - Beta Build (10-03-2020)
+1. App view section removed - as we are working on new concept
+2. App Controller menu removed - as are moving towards the integration of StagOns
+3. Super Admin Panel navigation menu updated
+
+### V 1.0.4 - Beta Build (20-02-2020)
+1. Update logic optimized
+2. Super Admin Panel UI modified including navigation
+3. Setup Optimized, multiple fields added, to customize framework during installation
+4. Core Modules Optimized
+5. Folder structure Modified
+6. Security enhanced
+
 ### V 1.0.3 - Beta Build (10-01-2020)
 1. Several minor bugs fixed
 2. Backed enqueue logic created

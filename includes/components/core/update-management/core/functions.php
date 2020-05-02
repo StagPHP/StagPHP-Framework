@@ -124,7 +124,7 @@ function stag_backup_includes(){
 
     $maintenance_obj = new stag_maintenance_mod($file_worker);
 
-    $date = 
+    // $date = 
 
     /** Move original directory */
     $response = $file_worker->copy_directory(array(
@@ -148,7 +148,7 @@ function stag_extract_latest_build(){
         'directory'             => '/cache/updates/',
         'zip_file'              => 'stag.zip',
         'destination_directory' => '/',
-        'overwrite_file'        => TRUE
+        'create_directories'    => TRUE
     ));
 
     if(TRUE === $result['status']) return TRUE;

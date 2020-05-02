@@ -13,5 +13,6 @@
 
 <!-- JS Variables -->
 <script>
+  var stag_api_ep = "<?php echo get_admin_panel_url().'/api'; ?>";
   var stag_api_ep_core_update = "<?php echo get_admin_panel_url().'/api/internal/core-update/'; ?>";
 </script>

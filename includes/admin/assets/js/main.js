@@ -214,6 +214,7 @@ function function_sequence() {
   try { stag_core_update(); } catch (err) {}
   try { view_specific_function(); } catch (err) {}
   try { cmf_init(); } catch(err) {}
+  try { initZUForm(); } catch(err) {}
 }
 
 

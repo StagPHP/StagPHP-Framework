@@ -11,14 +11,14 @@
     <div class="simple-nav">
       <ul>
         <li><a href="#" class="active">
-            <span class="stag-icon stag-icon-arrow-next"></span> Profile Details
-          </a></li>
+          <span class="stag-icon stag-icon-arrow-next"></span> Profile Details
+        </a></li>
         <li><a href="#">
-            <span class="stag-icon stag-icon-arrow-next"></span> Security Settings
-          </a></li>
+          <span class="stag-icon stag-icon-arrow-next"></span> Security Settings
+        </a></li>
         <li><a href="#">
-            <span class="stag-icon stag-icon-arrow-next"></span> Dashboard Settings
-          </a></li>
+          <span class="stag-icon stag-icon-arrow-next"></span> Dashboard Settings
+        </a></li>
       </ul>
     </div>
   </div>

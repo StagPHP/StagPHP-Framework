@@ -4,7 +4,7 @@
 <div class="content-base">
 
 <!-- Attach SU Panel Navigation -->
-<?php stag_attach_template('/templates/admin-panel/side-nav-menu.php'); ?>
+<?php stag_attach_template('/templates/admin-panel/navigation.php'); ?>
 
 <!-- Body Container -->
 <div id="body-container" class="body-container transition">

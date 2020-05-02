@@ -72,7 +72,7 @@ require_once(STAG_COMPONENTS_DIR.'/core/templating-engine/templating.php');
 require_once(STAG_COMPONENTS_DIR.'/core/model/jdb/app-model.php');
 
 /** Integrate Application With StagPHP */
-require_once(STAG_COMPONENTS_DIR.'/core/integration/app/main.php');
+require_once(STAG_COMPONENTS_DIR.'/core/integration/app/functions.php');
 
 /** Integrate Application With StagPHP */
 require_once(STAG_COMPONENTS_DIR.'/core/integration/stagons/main.php');

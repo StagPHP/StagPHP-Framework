@@ -256,11 +256,13 @@ function get_views(){
 
   $.ajax({
     method: "POST",
-    url: stag_get_stagons_list,
+    url: stag_api_ep + "/internal/stagons/",
     data: {action: "get"}
   }).done(function(data_received){
 
     var data = JSON.parse(data_received);
+
+    console.log(data);
 
     if(data['status']) create_stagons_list(data['result']['view-list']);
 

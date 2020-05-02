@@ -36,6 +36,12 @@ enqueue_css_backend(array(
     'version'       => '1.0.1',
     'priority'       => 'low'
 ));
+enqueue_css_backend(array(
+  'name'          => 'dropzone-css',
+  'relative_url'  => '/vendor/dropzone/dropzone.min.css',
+  'version'       => '1.0.1',
+  'priority'       => 'low'
+));
 
 // ========================================
 // JS Script
@@ -82,6 +88,11 @@ enqueue_js_backend(array(
     'version'       => '1.0.1'
 ));
 enqueue_js_backend(array(
+  'name'          => 'dropzone-js',
+  'relative_url'  => '/vendor/dropzone/dropzone.min.js',
+  'version'       => '1.0.1'
+));
+enqueue_js_backend(array(
     'name'          => 'slick',
     'relative_url'  => '/js/components/slick.min.js',
     'version'       => '1.0.1'
@@ -103,6 +114,11 @@ if(defined('SLUG_ARRAY') && !empty(SLUG_ARRAY[1])){
         'version'       => '1.0.1'
     ));
 }
+enqueue_js_backend(array(
+  'name'          => 'zu-functions',
+  'relative_url'  => '/js/zu-form.js',
+  'version'       => '1.0.1'
+));
 enqueue_js_backend(array(
     'name'          => 'ui-functions',
     'relative_url'  => '/js/ui-functions.js',
